@@ -2,13 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sheikh Marq | Visual Designer</title>
-  <meta name="description" content="Sheikh Marq is the personal brand of Musharaf Smart (Shaik Musharaf Alam), a visual designer and video editor based in Kuwait.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheikh Marq | Graphic Designer in Kuwait</title>
+  <meta name="description" content="Sheikh Marq is the professional creative brand of Shaik Musharaf Alam, also known as Musharaf Smart. Graphic designer and visual creator based in Kuwait.">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #FFD700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff4500;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1f1f1f 0%, #111 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+      animation: pop 1s ease forwards;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0;}
+      100% { transform: scale(1); opacity: 1;}
+    }
+
+    .hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    section:nth-child(even) {
+      background: #111;
+    }
+
+    h2.section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    h2.section-title::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #FFD700;
+      display: block;
+      margin: 10px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    p, li {
+      color: #ccc;
+    }
+
+    ul.skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.skills li {
+      background: #222;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: default;
+    }
+
+    ul.skills li:hover {
+      transform: translateY(-5px);
+      background: #FFD700;
+      color: #111;
+    }
+
+    .connect a {
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .connect a:hover {
+      transform: scale(1.1);
+      color: #ff4500;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Scroll animation */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero h2 { font-size: 1.2rem; }
+      ul.skills li { padding: 8px 15px; font-size: 0.9rem;}
+    }
+
+  </style>
 </head>
 <body>
-  <h1>Sheikh Marq</h1>
-  <p>Visual Designer & Video Editor</p>
-  <p>Owner: Musharaf Smart (Shaik Musharaf Alam)</p>
-  <p>Based in Kuwait</p>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sheikh Marq</h1>
+      <h2>Graphic Designer & Visual Creator in Kuwait</h2>
+      <p>Also known as <strong>Musharaf Smart</strong> — Real name: Shaik Musharaf Alam</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="fade-in-section">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am <strong>Sheikh Marq</strong>, the creative identity of Shaik Musharaf Alam (Musharaf Smart). 
+      I specialize in graphic design, branding, and visual communication, with additional expertise in 
+      video editing, VFX, CGI, and motion graphics. My work combines strong design fundamentals with modern tools, 
+      including AI-assisted creative workflows.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="fade-in-section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <ul class="skills">
+      <li>Graphic Design & Branding</li>
+      <li>Logo Design & Vector Art</li>
+      <li>Typography & Layout Design</li>
+      <li>Social Media Design & Ad Creatives</li>
+      <li>Packaging Design</li>
+      <li>Video Editing (Premiere Pro)</li>
+      <li>Motion Graphics & VFX</li>
+      <li>3D CGI & Unreal Engine</li>
+      <li>AI Tools for Design & Animation</li>
+    </ul>
+  </section>
+
+  <!-- Location Section -->
+  <section class="fade-in-section">
+    <h2 class="section-title">Location</h2>
+    <p>Based in Kuwait — available for local and international projects.</p>
+  </section>
+
+  <!-- Connect Section -->
+  <section class="fade-in-section connect">
+    <h2 class="section-title">Connect</h2>
+    <p>Instagram: <a href="https://www.instagram.com/sheikh.marq_" target="_blank">@sheikh.marq_</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Sheikh Marq — Shaik Musharaf Alam (Musharaf Smart)</p>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
 </body>
 </html>
