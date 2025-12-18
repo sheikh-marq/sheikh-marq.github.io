@@ -1,144 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sheikh Marq | Graphic Designer in Kuwait</title>
-  <meta name="description" content="Sheikh Marq is the professional creative brand of Shaik Musharaf Alam, also known as Musharaf Smart. Graphic designer and visual creator based in Kuwait.">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: #0d0d0d; color: #fff; line-height: 1.6; }
-
-    a { color: #FFD700; text-decoration: none; transition: all 0.3s ease; }
-    a:hover { color: #ff4500; }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #1f1f1f 0%, #111 100%);
-      position: relative;
-      overflow: hidden;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheikh Marq | Graphic Designer & Visual Creator Kuwait</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shaik Musharaf Alam",
+      "alternateName": "Sheikh Marq",
+      "jobTitle": "Graphic Designer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kuwait City",
+        "addressCountry": "KW"
+      },
+      "url": "https://sheikhmarq.github.io",
+      "sameAs": [
+        "https://www.instagram.com/sheikh.marq_"
+      ]
     }
-    .hero::before {
-      content: "";
-      position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite; z-index: 0;
-    }
-    @keyframes rotate { 0%{transform:rotate(0deg);}100%{transform:rotate(360deg);} }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for 2025 Color Strategy */
+        :root {
+            --primary: #FFD700; /* Gold */
+            --accent: #ff4500;
+            --bg-dark: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-main: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
 
-    .hero-content { position: relative; z-index: 1; max-width: 800px; }
-    .hero h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem; color: #FFD700; margin-bottom: 0.5rem;
-      animation: pop 1s ease forwards;
-    }
-    @keyframes pop { 0%{transform:scale(0);opacity:0;} 100%{transform:scale(1);opacity:1;} }
+        /* Modern Reset & Smooth Scrolling */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Poppins', sans-serif; 
+            overflow-x: hidden; 
+        }
 
-    .hero h2 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 400; color: #fff; margin-bottom:1rem; }
+        /* The Grain Overlay for Anti-AI Texture */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+        }
 
-    section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
-    section.bg-dark { background: #111; }
+        /* Bento Grid Architecture */
+       .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    h2.section-title {
-      font-family: 'Montserrat', sans-serif; font-weight:700; font-size:2rem; color:#FFD700;
-      margin-bottom:20px; text-align:center; position:relative;
-    }
-    h2.section-title::after {
-      content:''; width:60px; height:3px; background:#FFD700; display:block; margin:10px auto 0 auto; border-radius:2px;
-    }
+       .bento-item {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 20% cover 40%;
+        }
 
-    p, li { color: #ccc; }
+       .bento-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+        }
 
-    ul.skills {
-      display: flex; flex-wrap: wrap; gap:15px; justify-content:center; list-style:none; padding:0;
-    }
-    ul.skills li {
-      background:#222; padding:10px 20px; border-radius:30px; transition: transform 0.3s ease, background 0.3s ease; cursor:default;
-    }
-    ul.skills li:hover { transform: translateY(-5px); background:#FFD700; color:#111; }
+        /* Scroll Animation Keyframes */
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
 
-    .connect a { display:inline-block; margin-top:10px; font-weight:600; font-size:1.2rem; transition: all 0.3s ease; }
-    .connect a:hover { transform: scale(1.1); color:#ff4500; }
+        /* Hero Section with Signature Typography */
+       .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+        }
 
-    footer { background:#111; text-align:center; padding:20px; font-size:0.9rem; color:#888; }
+       .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: -1rem;
+        }
 
-    .fade-in-section { opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
-    .fade-in-section.is-visible { opacity:1; transform:translateY(0); }
-
-    @media screen and (max-width:768px) {
-      .hero h1{ font-size:3rem; }
-      .hero h2{ font-size:1.2rem; }
-      ul.skills li{ padding:8px 15px; font-size:0.9rem;}
-    }
-  </style>
+       .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
+    <header class="hero">
+        <h1 class="signature">Sheikh Marq</h1>
+        <h2 class="brand-name">Visual Creator</h2>
+        <p>Crafting High-End Identity in Kuwait</p>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Sheikh Marq</h1>
-      <h2>Graphic Designer & Visual Creator in Kuwait</h2>
-      <p>Also known as <strong>Musharaf Smart</strong> — Real name: Shaik Musharaf Alam</p>
-    </div>
-  </section>
+    <main class="bento-container">
+        </main>
 
-  <section class="fade-in-section">
-    <h2 class="section-title">About Me</h2>
-    <p>I am <strong>Sheikh Marq</strong>, the creative identity of Shaik Musharaf Alam (Musharaf Smart). I specialize in graphic design, branding, and visual communication, with additional expertise in video editing, VFX, CGI, and motion graphics. My work combines strong design fundamentals with modern tools, including AI-assisted creative workflows.</p>
-  </section>
+    <script>
+        // Intersection Observer for legacy support and micro-interactions
+        const cards = document.querySelectorAll('.bento-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
 
-  <section class="fade-in-section bg-dark">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <ul class="skills">
-      <li>Graphic Design & Branding</li>
-      <li>Logo Design & Vector Art</li>
-      <li>Typography & Layout Design</li>
-      <li>Social Media Design & Ad Creatives</li>
-      <li>Packaging Design</li>
-      <li>Video Editing (Premiere Pro)</li>
-      <li>Motion Graphics & VFX</li>
-      <li>3D CGI & Unreal Engine</li>
-      <li>AI Tools for Design & Animation</li>
-    </ul>
-  </section>
-
-  <section class="fade-in-section">
-    <h2 class="section-title">Location</h2>
-    <p>Based in Kuwait — available for local and international projects.</p>
-  </section>
-
-  <section class="fade-in-section bg-dark connect">
-    <h2 class="section-title">Connect</h2>
-    <p>Instagram: <a href="https://www.instagram.com/sheikh.marq_" target="_blank">@sheikh.marq_</a></p>
-  </section>
-
-  <footer>
-    <p>© Sheikh Marq — Shaik Musharaf Alam (Musharaf Smart)</p>
-  </footer>
-
-  <script>
-    const sections = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0.1 });
-    sections.forEach(sec => observer.observe(sec));
-  </script>
-
+        cards.forEach(card => observer.observe(card));
+    </script>
 </body>
 </html>
