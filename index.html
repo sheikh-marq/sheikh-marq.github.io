@@ -4,196 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sheikh Marq | Graphic Designer in Kuwait</title>
-  <meta name="description" content="Sheikh Marq, the professional creative brand of Shaik Musharaf Alam (Musharaf Smart). Graphic designer, visual creator, and VFX artist based in Kuwait.">
-
+  <meta name="description" content="Sheikh Marq is the professional creative brand of Shaik Musharaf Alam, also known as Musharaf Smart. Graphic designer and visual creator based in Kuwait.">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- GSAP for scroll animations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #0d0d0d;
       color: #fff;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
-    a { color: #FFD700; text-decoration: none; transition: 0.3s; }
-    a:hover { color: #ff4500; }
-    
-    section { min-height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 60px 20px; position: relative; }
-    
-    h1, h2 { margin-bottom: 20px; }
-    
+
+    a {
+      color: #FFD700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff4500;
+    }
+
     /* Hero Section */
     .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      background: linear-gradient(135deg, #1f1f1f 0%, #111 100%);
       position: relative;
       overflow: hidden;
     }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      animation: fadeIn 2s ease forwards;
+    }
+
     .hero h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 5rem;
+      font-size: 4rem;
       color: #FFD700;
-    }
-    .hero h2 { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 1.8rem; color: #fff; }
-
-    /* Parallax text background */
-    .parallax-bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 15rem;
-      color: rgba(255, 255, 255, 0.03);
-      pointer-events: none;
-      white-space: nowrap;
+      margin-bottom: 0.5rem;
+      animation: pop 1s ease forwards;
     }
 
-    /* Section Titles */
-    .section-title {
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0;}
+      100% { transform: scale(1); opacity: 1;}
+    }
+
+    .hero h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    section:nth-child(even) {
+      background: #111;
+    }
+
+    h2.section-title {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #FFD700;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      text-align: center;
       position: relative;
     }
 
-    .section-title::after {
+    h2.section-title::after {
       content: '';
       width: 60px;
       height: 3px;
       background: #FFD700;
       display: block;
-      margin: 10px auto 0;
+      margin: 10px auto 0 auto;
       border-radius: 2px;
     }
 
-    /* Content Sections */
-    .content { max-width: 900px; text-align: center; font-size: 1.1rem; color: #ccc; line-height: 1.8; }
-
-    /* Skills Tabs */
-    .skills { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; list-style: none; padding: 0; }
-    .skills li {
-      background: #222;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: transform 0.5s, background 0.5s;
-      cursor: default;
+    p, li {
+      color: #ccc;
     }
-    .skills li:hover { transform: translateY(-10px) rotate(-3deg); background: #FFD700; color: #111; }
 
-    /* Connect Section */
-    .connect a { display: inline-block; margin-top: 10px; font-size: 1.3rem; font-weight: 600; transition: transform 0.3s; }
-    .connect a:hover { transform: scale(1.2); color: #ff4500; }
-
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #111; color: #888; }
-
-    @media screen and (max-width: 768px){
-      .hero h1 { font-size: 3.5rem; }
-      .hero h2 { font-size: 1.4rem; }
+    ul.skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
     }
-  </style>
-</head>
-<body>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="parallax-bg">Sheikh Marq</div>
-    <h1>Sheikh Marq</h1>
-    <h2>Graphic Designer & Visual Creator in Kuwait</h2>
-    <p>Also known as <strong>Musharaf Smart</strong> — Real name: Shaik Musharaf Alam</p>
-  </section>
-
-  <!-- About Section -->
-  <section>
-    <h2 class="section-title">About Me</h2>
-    <div class="content">
-      <p>
-        I am <strong>Sheikh Marq</strong>, the creative identity of Shaik Musharaf Alam (Musharaf Smart). 
-        I specialize in graphic design, branding, and visual communication, with additional expertise in 
-        video editing, VFX, CGI, and motion graphics. My work combines strong design fundamentals with modern tools, 
-        including AI-assisted creative workflows.
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section>
-    <h2 class="section-title">Skills & Expertise</h2>
-    <ul class="skills">
-      <li>Graphic Design & Branding</li>
-      <li>Logo Design & Vector Art</li>
-      <li>Typography & Layout Design</li>
-      <li>Social Media Design & Ad Creatives</li>
-      <li>Packaging Design</li>
-      <li>Video Editing (Premiere Pro)</li>
-      <li>Motion Graphics & VFX</li>
-      <li>3D CGI & Unreal Engine</li>
-      <li>AI Tools for Design & Animation</li>
-    </ul>
-  </section>
-
-  <!-- Location Section -->
-  <section>
-    <h2 class="section-title">Location</h2>
-    <div class="content">
-      <p>Based in Kuwait — available for local and international projects.</p>
-    </div>
-  </section>
-
-  <!-- Connect Section -->
-  <section class="connect">
-    <h2 class="section-title">Connect</h2>
-    <p>Instagram: <a href="https://www.instagram.com/sheikh.marq_" target="_blank">@sheikh.marq_</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© Sheikh Marq — Shaik Musharaf Alam (Musharaf Smart)</p>
-  </footer>
-
-  <!-- GSAP Animations -->
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero text scale & fade
-    gsap.from(".hero h1", {opacity:0, y:50, duration:1, ease:"power2.out"});
-    gsap.from(".hero h2", {opacity:0, y:30, duration:1, delay:0.3, ease:"power2.out"});
-
-    // Parallax background movement
-    gsap.to(".parallax-bg", {
-      y: -200,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true
-      }
-    });
-
-    // Sections fade in & slide up
-    gsap.utils.toArray("section").forEach(section => {
-      gsap.from(section.querySelectorAll(".content, .skills, p, li"), {
-        opacity: 0,
-        y: 50,
-        stagger: 0.1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-        }
-      });
-    });
-  </script>
-</body>
-</html>    }
 
     ul.skills li {
       background: #222;
