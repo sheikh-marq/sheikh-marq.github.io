@@ -1,408 +1,297 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
 
-  <!-- PRIMARY SEO -->
-  <title>Sheikh Marq — Musharaf Smart — Shaik Musharaf Alam | Graphic Designer & Visual Creator</title>
-  <meta name="description" content="Sheikh Marq (Musharaf Smart / Shaik Musharaf Alam) — Premium graphic designer & visual creator based in Kuwait. Brand identity, motion graphics, VFX, CGI, video editing, and AI-assisted workflows. Official portfolio and contact hub, available for Kuwait & international projects." />
-  <meta name="keywords" content="Sheikh Marq, Musharaf Smart, Shaik Musharaf Alam, Graphic Designer, Visual Creator, Branding, Motion Graphics, VFX, CGI, Video Editing, Kuwait, Portfolio" />
-  <link rel="canonical" href="https://sheikh-marq.github.io/" />
-  <meta name="author" content="Shaik Musharaf Alam (Sheikh Marq / Musharaf Smart)" />
-  <meta name="robots" content="index,follow" />
+  // Toggle mobile menu
+  hamburger.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  });
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sheikh Marq — Graphic Designer & Visual Creator" />
-  <meta property="og:description" content="Official portfolio of Sheikh Marq (Musharaf Smart / Shaik Musharaf Alam) — premium branding, motion, VFX, CGI. Available for Kuwait & international projects." />
-  <meta property="og:url" content="https://sheikh-marq.github.io/" />
-  <meta property="og:site_name" content="Sheikh Marq — Portfolio" />
+  // Close mobile menu when clicking on a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
 
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sheikh Marq — Graphic Designer & Visual Creator" />
-  <meta name="twitter:description" content="Official portfolio of Sheikh Marq (Musharaf Smart / Shaik Musharaf Alam) — premium branding, motion, VFX, CGI. Available for Kuwait & international projects." />
+  // Smooth scrolling for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop - 70;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 
-  <!-- Structured data: Person (Schema.org) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shaik Musharaf Alam",
-    "alternateName": ["Sheikh Marq", "Musharaf Smart"],
-    "description": "Shaik Musharaf Alam (professionally Sheikh Marq, also known as Musharaf Smart) is a graphic designer and visual creator based in Kuwait. Available for projects in Kuwait and internationally. Specialties: brand identity, motion graphics, VFX, CGI, video editing, and AI-assisted creative workflows.",
-    "url": "https://sheikh-marq.github.io/",
-    "jobTitle": "Graphic Designer & Visual Creator",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "Kuwait"
-    },
-    "sameAs": [
-      "https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk",
-      "https://www.instagram.com/musharaf_smart?igsh=MWFnM290MTMxNm5k",
-      "https://youtube.com/@sheikhmarq?si=77DHmfU2aWWnhqpf"
-    ],
-    "knowsAbout": ["Graphic Design","Brand Identity","Motion Graphics","VFX","CGI","Video Editing","AI-assisted design workflows"],
-    "areaServed": ["Kuwait","International"]
+  // Navbar background on scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+    } else {
+      navbar.style.background = 'rgba(10, 10, 10, 0.9)';
+    }
+  });
+
+  // Scroll reveal animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, observerOptions);
+
+  // Add scroll reveal to elements
+  const revealElements = document.querySelectorAll('.about-card, .why-item, .skill-card, .philosophy-item, .ai-feature');
+  revealElements.forEach(el => {
+    el.classList.add('scroll-reveal');
+    observer.observe(el);
+  });
+});
+
+// AI Chat functionality
+class SheikhMarqAI {
+  constructor() {
+    this.chatMessages = document.getElementById('chatMessages');
+    this.chatInput = document.getElementById('chatInput');
+    this.sendButton = document.getElementById('sendButton');
+    this.isTyping = false;
+    
+    this.initializeChat();
   }
-  </script>
 
-  <!-- Minimal, self-contained styles (dark, premium, glassmorphism, electric purple accent) -->
-  <style>
-    :root{
-      --bg:#06060b;
-      --panel:rgba(255,255,255,0.03);
-      --muted:#9aa0a6;
-      --text:#f3f6f9;
-      --accent:#7C4DFF; /* Electric Purple */
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      --max-width:1200px;
-      --gap:28px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  initializeChat() {
+    this.sendButton.addEventListener('click', () => this.sendMessage());
+    this.chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        this.sendMessage();
+      }
+    });
+  }
+
+  async sendMessage() {
+    const message = this.chatInput.value.trim();
+    if (!message || this.isTyping) return;
+
+    // Add user message
+    this.addMessage(message, 'user');
+    this.chatInput.value = '';
+
+    // Show typing indicator
+    this.isTyping = true;
+    this.showTypingIndicator();
+
+    try {
+      // Get AI response
+      const response = await this.getAIResponse(message);
+      this.hideTypingIndicator();
+      this.addMessage(response, 'ai');
+    } catch (error) {
+      this.hideTypingIndicator();
+      this.addMessage("I apologize, but I'm having trouble connecting right now. Please reach out to me directly on Instagram @sheikh.marq_ for immediate assistance with your design needs.", 'ai');
     }
 
-    html { scroll-behavior: smooth; box-sizing: border-box; }
-    *,*::before,*::after{ box-sizing: inherit; }
-    body{
-      margin:0;
-      min-height:100%;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 500px at 10% 10%, rgba(124,77,255,0.06), transparent 8%),
-        radial-gradient(1000px 400px at 95% 80%, rgba(124,77,255,0.04), transparent 8%),
-        var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      overflow-x:hidden;
-    }
+    this.isTyping = false;
+  }
 
-    /* Subtle animated background layer */
-    .bg-move{
-      position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;mix-blend-mode:overlay;
-      background:
-        radial-gradient(600px 200px at 10% 20%, rgba(124,77,255,0.045), transparent 10%),
-        radial-gradient(500px 180px at 85% 85%, rgba(124,77,255,0.03), transparent 10%);
-      animation: drift 14s linear infinite;
-      z-index:0;
-    }
-    @keyframes drift{
-      0% { transform: translate3d(0,0,0) scale(1); }
-      50% { transform: translate3d(6%, -4%, 0) scale(1.02); }
-      100% { transform: translate3d(0,0,0) scale(1); }
-    }
-    @media (prefers-reduced-motion: reduce){ .bg-move{ animation:none; } }
+  addMessage(content, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    messageContent.innerHTML = `<p>${content}</p>`;
+    
+    messageDiv.appendChild(messageContent);
+    this.chatMessages.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+  }
 
-    .container{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:22px;
-      position:relative;
-      z-index:2;
-    }
-
-    /* Header - glass effect, fixed */
-    header.site-header{
-      position:fixed;
-      left:0;right:0;top:0;
-      backdrop-filter: blur(8px) saturate(120%);
-      background: linear-gradient(180deg, rgba(12,12,18,0.55), rgba(12,12,18,0.35));
-      border-bottom:1px solid rgba(255,255,255,0.03);
-      z-index:40;
-    }
-    .nav-inner{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:12px 22px;
-      display:flex;
-      align-items:center;
-      gap:18px;
-      justify-content:space-between;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);
-    }
-    .logo{
-      width:46px;height:46px;border-radius:10px;display:inline-grid;place-items:center;
-      font-weight:800;color:var(--accent);background:linear-gradient(135deg, rgba(124,77,255,0.09), rgba(255,255,255,0.01));border:1px solid rgba(124,77,255,0.12);
-    }
-    .brand .labels{line-height:1;}
-    .brand .labels .name{font-weight:700;font-size:15px;}
-    .brand .labels .role{font-size:12px;color:var(--muted);margin-top:2px;}
-
-    nav.primary{
-      display:flex;gap:14px;align-items:center;
-    }
-    nav.primary a{
-      color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px;
-      transition:all .18s ease;
-    }
-    nav.primary a:hover, nav.primary a:focus{ color:var(--text); transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.6); }
-
-    /* mobile toggle */
-    .menu-toggle{
-      display:none;padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted);
-    }
-
-    /* Hero: full screen */
-    .hero{
-      min-height: calc(100vh - 84px);
-      display:flex;
-      align-items:center;
-      gap:var(--gap);
-      padding-top:84px; /* header space */
-      padding-bottom:48px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1fr 380px;
-      gap:clamp(18px,4vw,40px);
-      align-items:start;
-    }
-    @media (max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
-
-    .hero-card{
-      padding:48px;border-radius:16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border:1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 10px 40px rgba(3,3,5,0.6);
-    }
-
-    .kicker{ color:var(--muted); text-transform:uppercase; letter-spacing:1.8px; font-size:12px; margin-bottom:10px; }
-    h1{
-      font-size:64px;line-height:0.95;margin:0 0 12px 0; font-weight:900; color:var(--text);
-      letter-spacing:-1px;
-    }
-    @media (max-width:520px){ h1{ font-size:36px; } }
-
-    .subline{ font-size:18px;color:var(--muted); margin-bottom:18px; }
-    .lead{
-      font-size:18px;color:rgba(243,246,249,0.87); margin-bottom:18px;
-      max-width:60ch;
-    }
-    .lead .em{ color:var(--accent); font-weight:700; }
-
-    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;
-      text-decoration:none;color:var(--text);font-weight:700;border:1px solid rgba(255,255,255,0.04);
-      background:transparent; transition:transform .14s ease, box-shadow .14s ease;
-    }
-    .btn.primary{
-      background:linear-gradient(90deg, rgba(124,77,255,0.10), rgba(124,77,255,0.04));
-      border:1px solid rgba(124,77,255,0.18); color:var(--accent);
-    }
-    .btn:hover{ transform:translateY(-4px); box-shadow:0 12px 40px rgba(12,10,30,0.55); }
-
-    .hero-meta{ margin-top:18px;color:var(--muted);font-size:13px; display:flex; gap:14px; flex-wrap:wrap; }
-
-    /* right column panel */
-    .panel{
-      border-radius:14px;padding:20px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border:1px solid rgba(255,255,255,0.03);
-    }
-    .panel h3{ margin:0 0 10px 0; font-size:16px; color:var(--text); }
-    .meta-list{ display:grid; gap:10px; margin-top:10px; }
-    .chip{
-      display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:rgba(255,255,255,0.01);
-      border:1px solid rgba(255,255,255,0.02); color:var(--muted); font-size:14px;
-    }
-    .chip strong{ color:var(--text); font-weight:700; }
-
-    .social-row{ display:flex; gap:10px; margin-top:12px; }
-    .icon{
-      width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);display:inline-grid;place-items:center;color:var(--text);
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      text-decoration:none;
-    }
-
-    /* Sections */
-    section{ padding:64px 0; position:relative; z-index:2; }
-    .section-head{ max-width:900px; margin-bottom:18px; }
-    .section-head h2{ margin:0 0 8px 0; font-size:22px; color:var(--text); }
-    .section-head p{ margin:0;color:var(--muted); }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3,1fr);
-      gap:20px;
-    }
-    @media (max-width:980px){ .cards{ grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:640px){ .cards{ grid-template-columns:1fr; } }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border:1px solid rgba(255,255,255,0.03); border-radius:12px; padding:20px;
-      box-shadow: 0 8px 30px rgba(2,2,6,0.45);
-    }
-    .card .icon-wrap{ width:56px;height:56px;border-radius:10px;display:inline-grid;place-items:center;margin-bottom:14px;
-      background:linear-gradient(180deg, rgba(124,77,255,0.06), rgba(255,255,255,0.00));
-      border:1px solid rgba(124,77,255,0.08); color:var(--accent);
-    }
-    .card h4{ margin:0 0 8px 0;font-size:16px;color:var(--text); }
-    .card p{ margin:0;color:var(--muted); font-size:14px; }
-
-    /* About / Identity layout */
-    .identity-grid{ display:grid; grid-template-columns: 1fr 360px; gap:30px; align-items:start; }
-    @media (max-width:980px){ .identity-grid{ grid-template-columns:1fr; } }
-
-    /* Why me list */
-    .why-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-    @media (max-width:760px){ .why-list{ grid-template-columns:1fr; } }
-    .why-item{ padding:14px;border-radius:10px;background:rgba(255,255,255,0.01); border:1px solid rgba(255,255,255,0.02); color:var(--muted); }
-
-    /* Visual experience */
-    .visual-style{ display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
-    .visual-quote{ font-weight:700; font-size:20px; color:var(--text); max-width:640px; }
-
-    /* Contact CTA */
-    .contact-cta{
-      display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:14px;
-    }
-    .contact-cta .cta-large{
-      padding:14px 18px;border-radius:12px;background:linear-gradient(90deg, rgba(124,77,255,0.10), rgba(124,77,255,0.04));
-      border:1px solid rgba(124,77,255,0.16); color:var(--accent); font-weight:800; text-decoration:none;
-    }
-
-    footer.site-foot{
-      padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);
-      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
-    }
-
-    /* small readable helpers */
-    .muted{ color:var(--muted); }
-    a.mail{ color:var(--accent); text-decoration:none; font-weight:800; }
-    .highlight{ color:var(--accent); font-weight:800; }
-
-    /* small reveal animation on load */
-    .reveal{ transform:translateY(6px); opacity:0; animation:reveal .9s cubic-bezier(.2,.9,.2,1) forwards; }
-    .reveal.delay{ animation-delay:.15s; }
-    @keyframes reveal{ to { transform:none; opacity:1; } }
-
-    @media (max-width:980px){
-      .nav-inner{ padding:8px 16px; }
-      .menu-toggle{ display:inline-flex; }
-      nav.primary{ display:none; position:absolute; right:16px; top:64px; background:linear-gradient(180deg, rgba(12,12,18,0.95), rgba(12,12,18,0.95)); padding:12px;border-radius:10px; box-shadow:0 20px 60px rgba(2,2,6,0.6); }
-      nav.primary.show{ display:flex; flex-direction:column; gap:6px; }
-    }
-
-    /* accessibility focus */
-    :focus{ outline: 3px solid rgba(124,77,255,0.18); outline-offset:3px; border-radius:6px; }
-
-  </style>
-</head>
-<body>
-
-  <div class="bg-move" aria-hidden="true"></div>
-
-  <!-- Fixed header -->
-  <header class="site-header" role="banner">
-    <div class="nav-inner">
-      <a class="brand" href="#home" aria-label="Sheikh Marq — home">
-        <div class="logo" aria-hidden="true">SM</div>
-        <div class="labels">
-          <div class="name">Sheikh Marq</div>
-          <div class="role">Graphic Designer & Visual Creator — Kuwait</div>
-        </div>
-      </a>
-
-      <nav class="primary" role="navigation" aria-label="Primary">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#why">Why Me</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" title="Open menu">
-        <!-- simple hamburger -->
-        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><rect width="20" height="2" rx="1" fill="currentColor"/><rect y="6" width="20" height="2" rx="1" fill="currentColor"/><rect y="12" width="20" height="2" rx="1" fill="currentColor"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <main id="home" class="container" role="main">
-    <!-- HERO (full screen) -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div class="hero-card reveal">
-          <div class="kicker">Brand Studio — Personal</div>
-          <h1 id="hero-title">Sheikh Marq</h1>
-          <div class="subline">Graphic Designer & Visual Creator</div>
-
-          <p class="lead">
-            Branding visuals that make people stop, feel, and remember.
-            <span class="em">Sheikh Marq</span> — professionally known as <strong>Musharaf Smart</strong>, legal name <strong>Shaik Musharaf Alam</strong>.
-            One person. Three names. One consistent creative voice. Available for projects in Kuwait & internationally.
-          </p>
-
-          <div class="hero-cta">
-            <a class="btn primary" href="#contact" title="Let's build something memorable">Let’s build something memorable</a>
-            <a class="btn" href="#expertise">Explore Expertise</a>
-            <a class="btn" href="https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk" target="_blank" rel="noopener">Portfolio Instagram</a>
-          </div>
-
-          <div class="hero-meta">
-            <div class="muted">Based in <strong>KUWAIT</strong></div>
-            <div class="muted">Branding • Motion • VFX • AI Workflows</div>
-          </div>
-        </div>
-
-        <aside class="panel reveal delay" aria-labelledby="panel-title">
-          <h3 id="panel-title">Identity</h3>
-          <div class="meta-list">
-            <div class="chip"><strong>Brand</strong><span style="margin-left:auto;" class="muted">Sheikh Marq</span></div>
-            <div class="chip"><strong>Alias</strong><span style="margin-left:auto;" class="muted">Musharaf Smart</span></div>
-            <div class="chip"><strong>Legal</strong><span style="margin-left:auto;" class="muted">Shaik Musharaf Alam</span></div>
-            <div class="chip"><strong>Location</strong><span style="margin-left:auto;" class="muted">Kuwait • International</span></div>
-            <div class="chip"><strong>Email</strong><span style="margin-left:auto;"><a class="mail" href="mailto:sheikh.marq@gmail.com">sheikh.marq@gmail.com</a></span></div>
-          </div>
-
-          <div style="margin-top:14px;">
-            <h3 style="margin:12px 0 8px 0;">Social</h3>
-            <div class="social-row">
-              <a class="icon" href="https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk" target="_blank" rel="noopener" aria-label="Brand Instagram">
-                <!-- IG icon -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-              </a>
-              <a class="icon" href="https://www.instagram.com/musharaf_smart?igsh=MWFnM290MTMxNm5k" target="_blank" rel="noopener" aria-label="Personal Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-              </a>
-              <a class="icon" href="https://youtube.com/@sheikhmarq?si=77DHmfU2aWWnhqpf" target="_blank" rel="noopener" aria-label="YouTube channel">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 7.5s-.2-1.6-.8-2.3c-.7-.8-1.4-.8-1.8-.9C17 4 12 4 12 4s-5 0-7.4.3c-.4 0-1.1.1-1.8.9C2.2 5.9 2 7.5 2 7.5S2 9.2 2 11v2c0 1.8 0 3.5 0 3.5s.2 1.6.8 2.3c.7.8 1.7.8 2.2.9 1.6.2 6.9.3 6.9.3s5 0 7.4-.3c.4 0 1.1-.1 1.8-.9.6-.7.8-2.3.8-2.3S22 14.8 22 13v-2c0-1.8 0-3.5 0-3.5z" stroke="currentColor" stroke-width="0.4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 14l5-3-5-3v6z" fill="currentColor"></path></svg>
-              </a>
-            </div>
-          </div>
-        </aside>
+  showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message ai-message typing-indicator';
+    typingDiv.innerHTML = `
+      <div class="message-content">
+        <p>Sheikh Marq is typing...</p>
       </div>
-    </section>
+    `;
+    this.chatMessages.appendChild(typingDiv);
+    this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+  }
 
-    <!-- ABOUT / IDENTITY -->
-    <section id="about" aria-labelledby="about-title">
-      <div class="section-head">
-        <h2 id="about-title">Identity — One Person, Three Names</h2>
-        <p class="muted">Clear, scannable identity information that tells Google and visitors: Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</p>
-      </div>
+  hideTypingIndicator() {
+    const typingIndicator = this.chatMessages.querySelector('.typing-indicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
 
-      <div class="identity-grid">
-        <div class="card reveal">
-          <h3 style="margin-top:0;">About this brand</h3>
-          <p class="muted" style="margin-top:8px;">
-            <strong>Sheikh Marq</strong> is the professional brand and public-facing identity for a studio-quality creative practice.
-            The same individual is also publicly known as <strong>Musharaf Smart</strong>, and legally registered as <strong>Shaik Musharaf Alam</strong>.
-          </p>
+  async getAIResponse(userMessage) {
+    // Simulate API call with exponential backoff
+    const systemPrompt = `You are the AI creative persona of Sheikh Marq (Shaik Musharaf Alam), a graphic designer and visual creator based in Kuwait.
 
-          <ul style="margin-top:16px;color:var(--muted);line-height:1.8">
-            <li><strong class="highlight">Professional brand:</strong> Sheikh Marq — visual identity & studio work.</li>
-            <li><strong class="highlight">Public alias:</strong> Musharaf Smart — social and personal projects.</li>
-            <li><strong class="highlight">Legal name:</strong> Shaik Musharaf Alam — contracts and formal records.</li>
-            <li><strong class="highlight">Availability:</strong> Kuwait & international clients welcomed.</li>
-          </ul>
-        </div>
+Core Identity:
+- Also known as Musharaf Smart
+- You represent clarity, consistency, and craft
+- You focus on design fundamentals while evolving through motion, CGI, and AI tools
 
-        <aside class="panel reveal delay">
-          <h3>Quick facts & focus</h3>
-          <div style="margin-top:12px;color:var(--muted);">
-            <p><strong>Core:</strong> Brand identity, visual systems, typography, and digital-first creative</p>
-            <p><st
+Expertise to Highlight:
+- Primary: Graphic Design, Branding, Logo Design, Packaging
+- Secondary: Video Editing (Premiere), VFX (After Effects/Nuke), 3D CGI (Unreal Engine)
+
+Tone & Voice:
+- Professional yet visionary
+- Helpful, detail-oriented, and growth-driven
+- Do not use shortcuts; emphasize quality and real learning
+
+Location: Based in Kuwait, available for local and international projects.
+
+Mandatory Rule: When a user asks how to hire you or work with you, tell them to reach out via Instagram DM at @sheikh.marq_. If they ask for your real name, confirm it is Shaik Musharaf Alam.`;
+
+    // Simulate different responses based on keywords
+    const lowerMessage = userMessage.toLowerCase();
+    
+    if (lowerMessage.includes('logo') || lowerMessage.includes('brand')) {
+      return "Excellent! Logo and branding are at the core of what I do as Sheikh Marq. I focus on creating visual identities that aren't just beautiful, but strategically designed to connect with your target audience. Whether you're a startup in Kuwait or an international business, I can help develop a complete brand system that includes logo design, color palettes, typography, and brand guidelines. Would you like to discuss your specific branding needs? Feel free to reach out via Instagram DM @sheikh.marq_ to start the conversation!";
+    }
+    
+    if (lowerMessage.includes('hire') || lowerMessage.includes('work') || lowerMessage.includes('project')) {
+      return "I'd love to collaborate with you! As Sheikh Marq (Shaik Musharaf Alam), I'm available for projects both in Kuwait and internationally. The best way to discuss your project requirements and get started is through Instagram DM @sheikh.marq_. There, we can talk about your vision, timeline, budget, and how my design expertise can bring your ideas to life. Looking forward to hearing from you!";
+    }
+    
+    if (lowerMessage.includes('kuwait') || lowerMessage.includes('local')) {
+      return "Yes, I'm based right here in Kuwait! As Sheikh Marq, I understand the local market and cultural nuances that make designs resonate with Kuwaiti audiences. Whether you need Arabic typography, culturally-appropriate color schemes, or designs that work for both local and international markets, I can help. I'm also available for in-person consultations for Kuwait-based clients. Reach out on Instagram @sheikh.marq_ to discuss your local project needs!";
+    }
+    
+    if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('budget')) {
+      return "Great question! My pricing varies depending on the scope, complexity, and timeline of each project. As Sheikh Marq, I believe in providing value that matches the investment. I offer everything from simple logo designs to complete brand identity systems and motion graphics. The best way to get an accurate quote is to discuss your specific needs. Please send me a DM on Instagram @sheikh.marq_ with details about your project, and I'll provide you with a customized proposal!";
+    }
+    
+    if (lowerMessage.includes('portfolio') || lowerMessage.includes('work') || lowerMessage.includes('examples')) {
+      return "I'd be happy to share my work with you! You can see my latest projects and creative process on my Instagram accounts. Check out @sheikh.marq_ for my professional brand work and @musharaf_smart for behind-the-scenes content. I also share design tutorials and insights on my YouTube channel @sheikhmarq. For a detailed portfolio discussion tailored to your project needs, feel free to DM me @sheikh.marq_!";
+    }
+    
+    if (lowerMessage.includes('name') || lowerMessage.includes('real name')) {
+      return "Absolutely! I'm Shaik Musharaf Alam - that's my real name. Sheikh Marq is my professional brand identity, and Musharaf Smart is another creative alias I use. All three represent the same person with the same commitment to exceptional design. Whether you know me as Sheikh Marq, Musharaf Smart, or Shaik Musharaf Alam, you're getting the same level of creative expertise and professional service. Feel free to reach out on Instagram @sheikh.marq_ anytime!";
+    }
+    
+    // Default response
+    return "Hello! I'm Sheikh Marq (Shaik Musharaf Alam), and I'm excited to learn about your creative project. I specialize in graphic design, branding, logo design, and visual storytelling for businesses in Kuwait and internationally. Whether you need a complete brand identity, social media graphics, or motion design, I'm here to help bring your vision to life. What kind of design challenge are you working on? For detailed discussions about your project, feel free to reach out via Instagram DM @sheikh.marq_!";
+  }
+}
+
+// Initialize AI chat when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  new SheikhMarqAI();
+});
+
+// Parallax effect for floating shapes
+window.addEventListener('scroll', function() {
+  const scrolled = window.pageYOffset;
+  const shapes = document.querySelectorAll('.shape');
+  
+  shapes.forEach((shape, index) => {
+    const speed = 0.5 + (index * 0.1);
+    const yPos = -(scrolled * speed);
+    shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+  });
+});
+
+// Add loading states for better UX
+function addLoadingState(element) {
+  element.classList.add('loading');
+}
+
+function removeLoadingState(element) {
+  element.classList.remove('loading');
+}
+
+// Smooth reveal animations for cards
+function revealOnScroll() {
+  const cards = document.querySelectorAll('.scroll-reveal');
+  
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const cardVisible = 150;
+    
+    if (cardTop < window.innerHeight - cardVisible) {
+      card.classList.add('revealed');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+
+// Initialize animations on load
+window.addEventListener('load', function() {
+  document.body.classList.add('fade-in');
+  revealOnScroll();
+});
+
+// Enhanced mobile menu functionality
+function toggleMobileMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (navMenu.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+    navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Performance optimization: Throttle scroll events
+function throttle(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Apply throttling to scroll events
+window.addEventListener('scroll', throttle(revealOnScroll, 100));
+      
