@@ -27,7 +27,7 @@
     <meta name="twitter:description" content="Shaik Musharaf Alam (Sheikh Marq / Musharaf Smart) — Kuwait-based designer specializing in branding, VFX, and CGI.">
     <meta name="twitter:image" content="https://yourusername.github.io/og-image.jpg">
 
-    <!-- SCHEMA.ORG: ENTITY UNIFICATION (Google understands all 3 names = 1 person) -->
+    <!-- SCHEMA.ORG: ENTITY UNIFICATION -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,7 +67,7 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --text-main: #ffffff;
             --text-dim: #b0b0b0;
-            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition: all 0.4s ease;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -80,26 +80,14 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Custom Cursor (hidden on mobile) */
-        #cursor-glow {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
-            position: fixed; pointer-events: none; z-index: 1;
-            transform: translate(-50%, -50%); mix-blend-mode: screen;
-            transition: transform 0.1s ease-out;
-        }
-        #cursor-dot {
-            width: 8px; height: 8px; background: var(--primary);
-            border-radius: 50%; position: fixed; pointer-events: none;
-            z-index: 10001; transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px var(--primary);
-        }
+        /* Hidden checkbox */
+        input[type="checkbox"] { display: none; }
 
         /* Navigation */
         nav {
             position: fixed; top: 20px; left: 50%;
             transform: translateX(-50%); z-index: 10000;
-            width: 90%; max-width: 700px;
+            width: 90%; max-width: 800px;
         }
         .nav-inner {
             background: var(--glass);
@@ -107,42 +95,43 @@
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 100px;
-            padding: 12px 20px;
-            display: flex; justify-content: center; gap: 20px;
+            padding: 14px 20px;
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
         .nav-link {
             text-decoration: none; color: var(--text-dim);
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem; font-weight: 700;
+            font-size: 0.9rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 1px;
             padding: 10px 20px; border-radius: 50px;
             transition: var(--transition);
         }
-        .nav-link.active, .nav-link:hover {
+        .nav-link:hover {
             color: var(--primary);
             background: rgba(255, 215, 0, 0.12);
         }
 
-        /* Sections */
+        /* Hero */
         section { padding: 140px 5% 100px; max-width: 1200px; margin: 0 auto; }
         .hero {
             height: 100vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
+            min-height: 600px;
         }
         .hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(5rem, 14vw, 10rem); color: var(--primary); margin-bottom: 20px; }
-        .hero .quote { font-style: italic; color: var(--text-dim); max-width: 700px; margin: 30px auto; font-size: clamp(1rem, 2.5vw, 1.3rem); }
+        .hero .quote { font-style: italic; color: var(--text-dim); max-width: 800px; margin: 30px auto; font-size: clamp(1rem, 3vw, 1.4rem); }
         .hero .title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.2rem, 5vw, 2.5rem);
+            font-size: clamp(1.4rem, 5vw, 2.8rem);
             font-weight: 800; text-transform: uppercase;
             letter-spacing: 8px; color: #fff;
             border-top: 2px solid var(--primary);
             border-bottom: 2px solid var(--primary);
             padding: 20px 0; margin: 40px 0;
         }
-        .hero .sub { font-size: clamp(0.9rem, 2vw, 1.1rem); color: var(--text-dim); letter-spacing: 2px; }
+        .hero .sub { font-size: clamp(0.9rem, 2vw, 1.1rem); color: var(--text-dim); letter-spacing: 2px; margin-bottom: 20px; }
 
         .section-title {
             color: var(--primary); font-family: 'Montserrat', sans-serif;
@@ -157,7 +146,7 @@
             background: var(--glass); border: 1px solid var(--glass-border);
             padding: 40px; border-radius: 20px; transition: var(--transition);
         }
-        .skill-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255,215,0,0.1); }
+        .skill-card:hover { border-color: var(--primary); transform: translateY(-10px); }
         .skill-card h3 { color: var(--primary); margin-bottom: 25px; font-size: 1.4rem; }
         .skill-list { list-style: none; }
         .skill-list li { margin-bottom: 12px; font-size: 1rem; color: var(--text-dim); display: flex; align-items: center; gap: 12px; }
@@ -165,7 +154,7 @@
 
         .why-card {
             background: var(--glass); border: 1px solid var(--primary);
-            padding: 50px; border-radius: 30px; text-align: center;
+            padding: 50px; border-radius: 30px; text-align: center; max-width: 900px; margin: 0 auto;
         }
         .why-card p { font-size: 1.1rem; line-height: 1.8; }
 
@@ -181,8 +170,8 @@
         }
         .social-btn:hover { background: var(--primary); color: #000; }
 
-        /* AI Chatbot */
-        #ai-assistant-container {
+        /* Contact Message Box (Pure CSS toggle - no JS) */
+        #contact-container {
             position: fixed; bottom: 30px; right: 30px; z-index: 10005;
         }
         .chat-trigger {
@@ -192,67 +181,87 @@
             cursor: pointer; transition: var(--transition);
         }
         .chat-trigger:hover { transform: scale(1.15); }
+
         .chat-box {
-            position: absolute; bottom: 80px; right: 0; width: 360px; max-width: 90vw;
-            height: 480px; background: rgba(10,10,10,0.95); backdrop-filter: blur(25px);
-            border: 1px solid var(--primary); border-radius: 20px; display: none;
+            display: none; position: absolute; bottom: 80px; right: 0; width: 360px; max-width: 90vw;
+            height: 560px; background: rgba(10,10,10,0.95); backdrop-filter: blur(25px);
+            border: 1px solid var(--primary); border-radius: 20px;
             flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
-        .chat-header { padding: 20px; background: rgba(255,215,0,0.1); border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center; }
-        .chat-header h4 { font-family: 'Montserrat'; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .chat-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
-        .msg { padding: 12px 18px; border-radius: 18px; font-size: 0.9rem; max-width: 80%; line-height: 1.5; }
+        #contact-toggle:checked ~ .chat-box { display: flex; }
+
+        .chat-header {
+            padding: 20px; background: rgba(255,215,0,0.1);
+            border-bottom: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center;
+        }
+        .chat-header h4 { font-family: 'Montserrat'; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .close-btn { color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+        .chat-messages {
+            flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;
+        }
+        .msg { padding: 12px 18px; border-radius: 18px; font-size: 0.9rem; max-width: 85%; line-height: 1.5; }
         .msg-ai { background: var(--glass); color: #fff; align-self: flex-start; border-left: 4px solid var(--primary); }
-        .msg-user { background: var(--primary); color: #000; align-self: flex-end; font-weight: 600; }
-        .chat-input-area { padding: 15px; border-top: 1px solid var(--glass-border); display: flex; gap: 10px; }
-        .chat-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 50px; padding: 12px 20px; color: #fff; outline: none; }
-        .chat-send { background: var(--primary); border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #000; }
+
+        .contact-form {
+            padding: 20px; display: flex; flex-direction: column; gap: 12px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            border-radius: 12px; padding: 12px 15px; color: #fff; font-size: 0.9rem; outline: none;
+        }
+        .contact-form textarea { resize: vertical; min-height: 80px; }
+        .contact-form button {
+            align-self: flex-end; background: var(--primary); border: none; padding: 12px 24px;
+            border-radius: 50px; color: #000; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px;
+        }
 
         footer { padding: 80px 20px 40px; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); }
 
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            * { cursor: auto !important; }
-            #cursor-glow, #cursor-dot { display: none; }
             nav { top: 10px; width: 95%; }
-            .nav-inner { gap: 10px; padding: 10px; }
+            .nav-inner { gap: 10px; padding: 10px 15px; }
             .nav-link { font-size: 0.75rem; padding: 8px 12px; }
             section { padding: 100px 5% 80px; }
             .social-btn { min-width: auto; padding: 12px 20px; font-size: 0.9rem; }
-            #ai-assistant-container { bottom: 15px; right: 15px; }
-            .chat-box { width: calc(100vw - 30px); height: 420px; }
+            #contact-container { bottom: 15px; right: 15px; }
+            .chat-box { height: 520px; }
         }
     </style>
 </head>
 <body>
 
-    <div id="cursor-glow" aria-hidden="true"></div>
-    <div id="cursor-dot" aria-hidden="true"></div>
-
-    <!-- AI Assistant -->
-    <div id="ai-assistant-container">
-        <div class="chat-trigger" onclick="toggleChat()" aria-label="Open AI Assistant">
+    <!-- Contact Message Box (Pure CSS - no JavaScript) -->
+    <div id="contact-container">
+        <input type="checkbox" id="contact-toggle">
+        <label for="contact-toggle" class="chat-trigger" aria-label="Open Contact Form">
             <i class="fas fa-comment-dots"></i>
-        </div>
-        <div class="chat-box" id="chatBox">
+        </label>
+        <div class="chat-box">
             <div class="chat-header">
-                <div>
-                    <h4>Sheikh Marq Assistant</h4>
-                    <span style="font-size:0.7rem; color:var(--text-dim);">Ask about projects</span>
-                </div>
-                <button onclick="toggleChat()" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;">&times;</button>
+                <h4>Sheikh Marq Assistant</h4>
+                <label for="contact-toggle" class="close-btn" aria-label="Close">&times;</label>
             </div>
-            <div class="chat-messages" id="chatMessages"></div>
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." onkeypress="if(event.key==='Enter') sendMessage()">
-                <button class="chat-send" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            <div class="chat-messages">
+                <div class="msg msg-ai">Hi! Welcome to Sheikh Marq Studio.</div>
+                <div class="msg msg-ai">Tell me about your brand or project and the service you need (e.g., Branding, Logo, VFX, CGI).</div>
+                <div class="msg msg-ai">Fill in your details below — we will review and contact you soon!</div>
             </div>
+            <form action="mailto:sheikh.marq@gmail.com?subject=Project Inquiry from Website" method="post" enctype="text/plain" class="contact-form">
+                <input type="text" name="Name:" placeholder="Your Name *" required>
+                <input type="text" name="Project:" placeholder="Brand / Project Name">
+                <input type="email" name="Email:" placeholder="Your Email *" required>
+                <input type="tel" name="Phone:" placeholder="Your Phone Number (with country code)">
+                <textarea name="Message:" placeholder="Describe your project or needs..." required></textarea>
+                <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
         </div>
     </div>
 
     <nav aria-label="Main navigation">
         <div class="nav-inner">
-            <a href="#home" class="nav-link active">Home</a>
+            <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#why" class="nav-link">Why Sheikh Marq</a>
@@ -333,11 +342,9 @@
 
         <section id="why">
             <h2 class="section-title">Why Sheikh Marq</h2>
-            <div style="max-width:900px; margin:0 auto;">
-                <div class="why-card">
-                    <p>Sheikh Marq represents clarity, consistency, and craft. I focus on strong fundamentals in graphic design while continuously evolving through motion, CGI, and AI tools. My approach is practical, detail-oriented, and growth-driven — prioritizing quality over hype.</p>
-                    <p style="margin-top:25px;">This brand documents real learning, real work, and real progress, not shortcuts.</p>
-                </div>
+            <div class="why-card">
+                <p>Sheikh Marq represents clarity, consistency, and craft. I focus on strong fundamentals in graphic design while continuously evolving through motion, CGI, and AI tools. My approach is practical, detail-oriented, and growth-driven — prioritizing quality over hype.</p>
+                <p style="margin-top:25px;">This brand documents real learning, real work, and real progress, not shortcuts.</p>
             </div>
         </section>
 
@@ -346,13 +353,14 @@
                 <h2 class="section-title" style="margin-bottom:20px; font-size:2.2rem;">Get In Touch</h2>
                 <p style="color:var(--text-dim); margin-bottom:10px;">Shaik Musharaf Alam | Musharaf Smart</p>
                 <p style="color:var(--primary); font-weight:700; font-size:1.3rem; margin-bottom:40px;">sheikh.marq@gmail.com</p>
-                <p style="max-width:600px; margin:0 auto 40px; color:var(--text-dim);">For collaborations, projects, or inquiries, please reach out via Instagram DM or email.</p>
+                <p style="max-width:600px; margin:0 auto 40px; color:var(--text-dim);">For collaborations, projects, or inquiries, please reach out via Instagram DM, email, or the floating message button.</p>
                 
                 <div class="social-row">
-                    <a href="https://www.instagram.com/sheikh.marq_" target="_blank" rel="noopener" class="social-btn" aria-label="Sheikh Marq Instagram (Main Brand)">
+                    <a href="https://www.instagram.com/sheikh.marq_" target="_blank" rel="noopener" class="social-btn">
                         <i class="fab fa-instagram"></i> Sheikh Marq (Brand)
                     </a>
-                    <a href="https://www.instagram.com/musharaf_smart" target="_blank" rel="noopener" class="social-btn" aria-label="Musharaf Smart Instagram (Personal)">
+                    <a href="https://www.instagram.com/musharaf_smart" target="_blank" rel="noopener" class="social-btn">
                         <i class="fab fa-instagram"></i> Musharaf Smart (Personal)
                     </a>
-                    <a href="https://www.youtube.com/@sheikh
+                    <a href="https://www.youtube.com/@sheikhmarq" target="_blank" rel="noopener" class="social-btn">
+          
