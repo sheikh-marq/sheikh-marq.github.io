@@ -10,7 +10,7 @@
     <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, Graphic Designer Kuwait, Branding Specialist, VFX Artist Kuwait, Unreal Engine CGI">
     <meta name="author" content="Shaik Musharaf Alam">
     
-    <!-- JSON-LD FOR IDENTITY UNIFICATION (updated with personal Instagram) -->
+    <!-- JSON-LD FOR IDENTITY UNIFICATION -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,7 +26,7 @@
       "sameAs": [
         "https://www.instagram.com/sheikh.marq_",
         "https://www.instagram.com/musharaf_smart",
-        "https://www.youtube.com/@sheikhmarq"
+        "https://youtube.com/@sheikhmarq"
       ]
     }
     </script>
@@ -145,12 +145,22 @@
         .identity-card h2 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 1.8rem; }
         .identity-card p { margin-bottom: 15px; line-height: 1.8; opacity: 0.9; }
 
+        /* Portfolio Vault Section */
+        .vault-section { padding: 80px 5%; max-width: 1200px; margin: 40px auto; text-align: center; }
+        .vault-card { 
+            background: linear-gradient(135deg, var(--card-bg), rgba(157, 80, 187, 0.1)); 
+            padding: 50px; border-radius: 30px; border: 2px dashed var(--primary); 
+            transition: var(--transition);
+        }
+        .vault-card:hover { border-style: solid; box-shadow: 0 0 30px var(--primary-glow); }
+
         /* CTA Buttons */
         .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
         .btn {
             padding: 14px 30px; border-radius: 50px; text-decoration: none;
             font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
             transition: var(--transition);
+            display: inline-flex; align-items: center; gap: 10px;
         }
         .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
         .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
@@ -192,9 +202,12 @@
         }
 
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--card-border); opacity: 0.8; font-size: 0.8rem; }
+        .social-footer { margin-bottom: 25px; display: flex; justify-content: center; gap: 20px; }
+        .social-link { color: var(--text-main); font-size: 1.5rem; transition: var(--transition); }
+        .social-link:hover { color: var(--primary); transform: scale(1.2); }
     </style>
 </head>
-<body> <!-- removed redundant dark-mode class; theme now handled dynamically -->
+<body class="dark-mode">
 
     <nav>
         <a href="#" class="logo">SHEIKH MARQ</a>
@@ -202,6 +215,7 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#identity">Identity</a>
+                <a href="#vault">Portfolio</a>
                 <a href="#matrix">Matrix</a>
             </div>
             <button class="mode-toggle" onclick="toggleMode()" title="Toggle Theme">
@@ -223,8 +237,12 @@
                         High-end branding, VFX mastery, and real-time CGI production. Based in Kuwait, available worldwide.
                     </div>
                     <div class="btn-group">
-                        <a href="#identity" class="btn btn-primary">Discover Identity</a>
-                        <a href="mailto:sheikh.marq@gmail.com" class="btn btn-outline">Contact Me</a>
+                        <a href="https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> View Portfolio Drive
+                        </a>
+                        <a href="mailto:sheikh.marq@gmail.com" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
                     </div>
                 </div>
             </div>
@@ -236,6 +254,19 @@
                 <p><strong>Professional Brand:</strong> Sheikh Marq | <strong>Online Handle:</strong> Musharaf Smart</p>
                 <p>I am a Kuwait-based visual architect specializing in the convergence of Graphic Design and 3D Technology. With experience as a creative faculty member, I focus on the structural "why" behind every design asset.</p>
                 <p>My goal is to provide Kuwait-based agencies and international clients with visual identities that act as lifetime assets.</p>
+            </div>
+        </section>
+
+        <section class="vault-section" id="vault">
+            <div class="vault-card">
+                <i class="fab fa-google-drive" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <h2 style="font-family: 'Montserrat'; margin-bottom: 15px;">The Design Vault</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px; max-width: 600px; margin-inline: auto;">
+                    Access my full repository of high-resolution brand identity projects, motion reels, and 3D architectural renders directly via Google Drive.
+                </p>
+                <a href="https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ" target="_blank" class="btn btn-primary">
+                    Enter the Vault <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </section>
 
@@ -287,4 +318,84 @@
         </div>
         <div class="chat-window" id="chatWin">
             <div class="chat-header">
-                <span>Marq AI Studio
+                <span>Marq AI Studio</span>
+                <i class="fas fa-times" style="cursor:pointer" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-content" id="chatMsgs">
+                <div class="chat-msg msg-ai">Welcome. Please tell me your Brand Name and project type to begin.</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatIn" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendChat()">
+                <button onclick="sendChat()" style="background:var(--primary); border:none; color:white; width:30px; height:30px; border-radius:50%; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-footer">
+            <a href="https://www.instagram.com/sheikh.marq_" target="_blank" class="social-link" title="Brand Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/musharaf_smart" target="_blank" class="social-link" title="Personal Instagram"><i class="fas fa-user-circle"></i></a>
+            <a href="https://youtube.com/@sheikhmarq" target="_blank" class="social-link" title="YouTube Channel"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 Shaik Musharaf Alam | Branded as Sheikh Marq</p>
+        <p style="opacity: 0.5; margin-top: 8px;">Identity Unified: Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</p>
+    </footer>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+        }
+
+        let chatStep = 0;
+        function toggleChat() {
+            const win = document.getElementById('chatWin');
+            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendChat() {
+            const input = document.getElementById('chatIn');
+            const msgs = document.getElementById('chatMsgs');
+            const val = input.value.trim();
+            if(!val) return;
+
+            const u = document.createElement('div');
+            u.className = 'chat-msg msg-user';
+            u.innerText = val;
+            msgs.appendChild(u);
+            input.value = '';
+            msgs.scrollTop = msgs.scrollHeight;
+
+            setTimeout(() => {
+                const a = document.createElement('div');
+                a.className = 'chat-msg msg-ai';
+                if(chatStep === 0) {
+                    a.innerText = "Understood. Please provide an Email or WhatsApp number so Shaik can contact you.";
+                    chatStep = 1;
+                } else {
+                    a.innerText = "Thank you. Your inquiry is recorded. Shaik will review this and contact you soon.";
+                    window.location.href = `mailto:sheikh.marq@gmail.com?subject=Inquiry from Portfolio&body=Message: ${val}`;
+                }
+                msgs.appendChild(a);
+                msgs.scrollTop = msgs.scrollHeight;
+            }, 800);
+        }
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    e.target.style.opacity = 1;
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {threshold: 0.1});
+
+        document.querySelectorAll('.skill-item, .identity-card, .vault-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            obs.observe(el);
+        });
+    </script>
+</body>
+</html>
+
