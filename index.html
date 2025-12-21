@@ -97,7 +97,7 @@
         /* Hero Section */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            padding: 80px 5% 40px;
+            padding: 100px 5% 40px;
         }
         .hero-inner { 
             display: flex; align-items: center; gap: 5%; width: 100%; max-width: 1200px;
@@ -121,7 +121,7 @@
         .hero-tagline { font-family: 'Montserrat'; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero-quote { color: var(--text-muted); font-size: 1rem; border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 35px; max-width: 500px; }
 
-        /* Matrix Grid (Requested Reference Style) */
+        /* Matrix Grid */
         .matrix-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
         .matrix-title { text-align: center; margin-bottom: 50px; }
         .matrix-title h2 { font-family: 'Montserrat'; font-size: 2rem; text-transform: uppercase; margin-bottom: 10px; }
@@ -203,14 +203,13 @@
                 <a href="#identity">Identity</a>
                 <a href="#matrix">Matrix</a>
             </div>
-            <button class="mode-toggle" onclick="toggleMode()">
+            <button class="mode-toggle" onclick="toggleMode()" title="Toggle Theme">
                 <i class="fas fa-adjust"></i>
             </button>
         </div>
     </nav>
 
     <main>
-        <!-- HERO -->
         <section class="hero" id="home">
             <div class="hero-inner">
                 <div class="hero-image-container">
@@ -230,7 +229,6 @@
             </div>
         </section>
 
-        <!-- IDENTITY -->
         <section class="identity-section" id="identity">
             <div class="identity-card">
                 <h2>Shaik Musharaf Alam</h2>
@@ -240,7 +238,6 @@
             </div>
         </section>
 
-        <!-- MATRIX (Skills Grid) -->
         <section class="matrix-section" id="matrix">
             <div class="matrix-title">
                 <h2>The Creative Matrix</h2>
@@ -283,7 +280,6 @@
         </section>
     </main>
 
-    <!-- CHAT -->
     <div class="chat-widget">
         <div class="chat-btn" onclick="toggleChat()">
             <i class="fas fa-bolt"></i>
@@ -313,12 +309,10 @@
     </footer>
 
     <script>
-        // Toggle Dark/Light Mode
         function toggleMode() {
             document.body.classList.toggle('light-mode');
         }
 
-        // Chatbot Logic
         let chatStep = 0;
         function toggleChat() {
             const win = document.getElementById('chatWin');
@@ -353,7 +347,6 @@
             }, 800);
         }
 
-        // Fade-in animations
         const obs = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if(e.isIntersecting) {
