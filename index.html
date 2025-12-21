@@ -10,7 +10,7 @@
     <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, Graphic Designer Kuwait, Branding Specialist, VFX Artist Kuwait, Unreal Engine CGI">
     <meta name="author" content="Shaik Musharaf Alam">
     
-    <!-- JSON-LD FOR IDENTITY UNIFICATION -->
+    <!-- JSON-LD FOR IDENTITY UNIFICATION (updated with personal Instagram) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,7 +25,8 @@
       "url": "https://sheikhmarq.com",
       "sameAs": [
         "https://www.instagram.com/sheikh.marq_",
-        "https://youtube.com/@sheikhmarq"
+        "https://www.instagram.com/musharaf_smart",
+        "https://www.youtube.com/@sheikhmarq"
       ]
     }
     </script>
@@ -193,7 +194,7 @@
         footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--card-border); opacity: 0.8; font-size: 0.8rem; }
     </style>
 </head>
-<body class="dark-mode">
+<body> <!-- removed redundant dark-mode class; theme now handled dynamically -->
 
     <nav>
         <a href="#" class="logo">SHEIKH MARQ</a>
@@ -286,84 +287,4 @@
         </div>
         <div class="chat-window" id="chatWin">
             <div class="chat-header">
-                <span>Marq AI Studio</span>
-                <i class="fas fa-times" style="cursor:pointer" onclick="toggleChat()"></i>
-            </div>
-            <div class="chat-content" id="chatMsgs">
-                <div class="chat-msg msg-ai">Welcome. Please tell me your Brand Name and project type to begin.</div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatIn" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendChat()">
-                <button onclick="sendChat()" style="background:var(--primary); border:none; color:white; width:30px; height:30px; border-radius:50%; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <a href="https://www.instagram.com/sheikh.marq_" style="color:var(--text-main); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@sheikhmarq" style="color:var(--text-main); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p>&copy; 2025 Shaik Musharaf Alam | Branded as Sheikh Marq</p>
-        <p style="opacity: 0.5; margin-top: 8px;">Identity Unified: Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</p>
-    </footer>
-
-    <script>
-        function toggleMode() {
-            document.body.classList.toggle('light-mode');
-        }
-
-        let chatStep = 0;
-        function toggleChat() {
-            const win = document.getElementById('chatWin');
-            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function sendChat() {
-            const input = document.getElementById('chatIn');
-            const msgs = document.getElementById('chatMsgs');
-            const val = input.value.trim();
-            if(!val) return;
-
-            const u = document.createElement('div');
-            u.className = 'chat-msg msg-user';
-            u.innerText = val;
-            msgs.appendChild(u);
-            input.value = '';
-            msgs.scrollTop = msgs.scrollHeight;
-
-            setTimeout(() => {
-                const a = document.createElement('div');
-                a.className = 'chat-msg msg-ai';
-                if(chatStep === 0) {
-                    a.innerText = "Understood. Please provide an Email or WhatsApp number so Shaik can contact you.";
-                    chatStep = 1;
-                } else {
-                    a.innerText = "Thank you. Your inquiry is recorded. Shaik will review this and contact you soon.";
-                    window.location.href = `mailto:sheikh.marq@gmail.com?subject=Inquiry from Portfolio&body=Message: ${val}`;
-                }
-                msgs.appendChild(a);
-                msgs.scrollTop = msgs.scrollHeight;
-            }, 800);
-        }
-
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if(e.isIntersecting) {
-                    e.target.style.opacity = 1;
-                    e.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {threshold: 0.1});
-
-        document.querySelectorAll('.skill-item, .identity-card').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            obs.observe(el);
-        });
-    </script>
-</body>
-</html>
-
- 
+                <span>Marq AI Studio
