@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sheikh-marq.github.io/sitemap.xml
