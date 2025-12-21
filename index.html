@@ -2,37 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- ADVANCED SEO: IDENTITY SEARCH ENGINE OPTIMIZATION (A+ GRADE) -->
+    <!-- SEO STRATEGY: GOOGLE ENTITY RANKING -->
     <title>Sheikh Marq | Shaik Musharaf Alam | Graphic Designer Kuwait</title>
     <meta name="description" content="Portfolio of Shaik Musharaf Alam (Sheikh Marq / Musharaf Smart). Premier Graphic Designer in Kuwait. Specialist in Branding, CGI, and VFX.">
     <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, Graphic Designer Kuwait, Branding Specialist, VFX Artist Kuwait, Unreal Engine CGI">
     <meta name="author" content="Shaik Musharaf Alam">
     
-    <!-- JSON-LD FOR IDENTITY UNIFICATION -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Shaik Musharaf Alam",
-      "alternateName": ["Sheikh Marq", "Musharaf Smart"],
-      "jobTitle": "Graphic Designer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kuwait"
-      },
-      "url": "https://sheikhmarq.com",
-      "sameAs": [
-        "https://www.instagram.com/sheikh.marq_",
-        "https://www.instagram.com/musharaf_smart",
-        "https://youtube.com/@sheikhmarq",
-        "https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ"
-      ]
-    }
-    </script>
+    <!-- SOCIAL GRAPH -->
+    <meta property="og:title" content="Sheikh Marq | Visual Legacy Creator">
+    <meta property="og:description" content="Professional Branding & CGI based in Kuwait.">
+    <meta property="og:image" content="profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- FONTS & ICONS -->
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -40,280 +24,248 @@
     <style>
         :root {
             /* Metallic Purple & Platinum Theme */
-            --primary: #9d50bb;
-            --primary-glow: rgba(157, 80, 187, 0.4);
-            --platinum: #e5e7eb;
-            --deep-space: #0b0712;
+            --primary: #bc6ff1;
+            --primary-glow: rgba(188, 111, 241, 0.4);
+            --metallic-silver: #e0e0e0;
+            --deep-space: #0a0514;
             
             /* Theme Variables - Dark Default */
             --bg: var(--deep-space);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.6);
             --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(157, 80, 187, 0.3);
-            --nav-bg: rgba(11, 7, 18, 0.9);
-            --transition: all 0.3s ease;
+            --card-border: rgba(188, 111, 241, 0.2);
+            --nav-bg: rgba(10, 5, 20, 0.8);
+            --shadow: rgba(0, 0, 0, 0.5);
         }
 
-        /* Light Mode - Enhanced Visibility & Fix */
+        /* Light Mode - High Contrast Fix */
         body.light-mode {
             --bg: #ffffff;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --card-bg: #f9fafb;
-            --card-border: rgba(157, 80, 187, 0.4);
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --card-bg: #f8f0ff;
+            --card-border: rgba(137, 44, 220, 0.2);
             --nav-bg: rgba(255, 255, 255, 0.9);
+            --shadow: rgba(188, 111, 241, 0.15);
+            --metallic-silver: #444444;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
-            transition: var(--transition);
+            transition: background 0.4s, color 0.4s;
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* Custom Cursor */
+        #cursor {
+            width: 10px; height: 10px; background: var(--primary);
+            border-radius: 50%; position: fixed; pointer-events: none;
+            z-index: 9999; box-shadow: 0 0 15px var(--primary);
+            transition: transform 0.1s;
+        }
+        #cursor-follower {
+            width: 40px; height: 40px; border: 1px solid var(--primary);
+            border-radius: 50%; position: fixed; pointer-events: none;
+            z-index: 9998; transition: transform 0.15s ease-out;
+        }
+
+        /* Nav Bar */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 15px 5%; background: var(--nav-bg);
-            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            padding: 20px 5%; background: var(--nav-bg);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--card-border);
             display: flex; justify-content: space-between; align-items: center;
         }
-        .logo { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 2px; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
-        
-        .nav-actions { display: flex; align-items: center; gap: 20px; }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .logo { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 2px; font-size: 1.2rem; color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a { 
             text-decoration: none; color: var(--text-main); 
-            font-size: 0.75rem; text-transform: uppercase; font-weight: 700;
-            letter-spacing: 1px; transition: var(--transition);
+            font-size: 0.8rem; text-transform: uppercase; font-weight: 600;
+            letter-spacing: 1px; transition: 0.3s;
         }
         .nav-links a:hover { color: var(--primary); }
-        .mode-toggle { cursor: pointer; color: var(--primary); font-size: 1.1rem; border: none; background: none; transition: transform 0.3s ease; }
-        .mode-toggle:hover { transform: rotate(30deg); }
 
-        /* Social Icons in Nav */
-        .nav-socials { display: flex; gap: 15px; border-right: 1px solid var(--card-border); padding-right: 20px; }
-        .nav-socials a { color: var(--text-main); font-size: 1.1rem; transition: var(--transition); }
-        .nav-socials a:hover { color: var(--primary); transform: translateY(-2px); }
-
-        /* Hero Section */
+        /* Hero: Desktop Optimized */
         .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            padding: 100px 5% 40px;
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 0 10%; position: relative; overflow: hidden;
         }
-        .hero-inner { 
-            display: flex; align-items: center; gap: 5%; width: 100%; max-width: 1200px;
-            flex-wrap: wrap; justify-content: center;
-        }
+        .hero-inner { display: flex; align-items: center; gap: 80px; width: 100%; max-width: 1400px; }
         
-        .hero-image-container { position: relative; flex: 0 0 auto; margin-bottom: 30px; }
-        .hero-image-container img {
-            width: 320px; height: 420px; object-fit: cover;
-            border-radius: 15px; border: 1px solid var(--card-border);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        .hero-image-box { position: relative; flex-shrink: 0; }
+        .hero-image-box img {
+            width: 350px; height: 450px; object-fit: cover;
+            border-radius: 20px; border: 1px solid var(--card-border);
+            box-shadow: 20px 20px 60px var(--shadow);
         }
-        .hero-image-container::before {
-            content: ''; position: absolute; top: 15px; left: -15px;
+        .hero-image-box::after {
+            content: ''; position: absolute; top: -20px; left: -20px;
             width: 100%; height: 100%; border: 2px solid var(--primary);
-            border-radius: 15px; z-index: -1;
+            border-radius: 20px; z-index: -1;
         }
 
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-text h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3.5rem, 8vw, 5.5rem); color: var(--primary); margin-bottom: -10px; }
-        .hero-tagline { font-family: 'Montserrat'; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-        .hero-quote { color: var(--text-muted); font-size: 1rem; border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 35px; max-width: 500px; }
+        .hero-text { flex: 1; text-align: left; }
+        .hero-text h1 { font-family: 'Great Vibes', cursive; font-size: 6rem; color: var(--primary); margin-bottom: -10px; }
+        .hero-tagline { font-family: 'Montserrat'; font-weight: 900; font-size: 2.2rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-quote { color: var(--text-muted); font-size: 1.1rem; border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 40px; }
 
-        /* Identity Block */
-        .identity-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .identity-card { background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--card-border); }
-        .identity-card h2 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 1.8rem; }
-        .identity-card p { margin-bottom: 15px; line-height: 1.8; opacity: 0.9; }
+        /* Skills Grid - Inspired by Reference */
+        .skills-section { background: var(--card-bg); padding: 120px 10%; }
+        .skills-container {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+            background: var(--card-border); border: 1px solid var(--card-border);
+        }
+        .skill-box {
+            background: var(--bg); padding: 50px 30px; text-align: center;
+            transition: 0.4s;
+        }
+        .skill-box:hover { background: var(--primary); color: white; transform: scale(1.02); z-index: 10; }
+        .skill-box i { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .skill-box h4 { font-family: 'Montserrat'; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
 
-        /* Link Grid in Identity */
-        .identity-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
-        .link-item { 
-            text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.85rem;
-            display: flex; align-items: center; gap: 10px; padding: 12px 20px;
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: 10px; transition: var(--transition);
+        /* Content Blocks */
+        .content-block { padding: 150px 10%; display: flex; gap: 60px; align-items: flex-start; }
+        .side-title { 
+            position: sticky; top: 150px; font-family: 'Montserrat'; 
+            font-weight: 900; font-size: 4rem; opacity: 0.1; 
+            writing-mode: vertical-rl; transform: rotate(180);
         }
-        .link-item:hover { background: var(--primary); color: white; border-color: var(--primary); transform: translateX(5px); }
-        .link-item i { font-size: 1.2rem; }
-
-        /* Matrix Grid */
-        .matrix-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .matrix-title { text-align: center; margin-bottom: 50px; }
-        .matrix-title h2 { font-family: 'Montserrat'; font-size: 2rem; text-transform: uppercase; margin-bottom: 10px; }
-        
-        .skills-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1px; background: var(--card-border); border: 1px solid var(--card-border);
-        }
-        .skill-item {
-            background: var(--bg); padding: 60px 30px; text-align: center;
-            transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 15px;
-        }
-        .skill-item:hover { background: var(--primary); color: #fff; transform: translateY(-5px); z-index: 10; }
-        .skill-item i { font-size: 2.5rem; }
-        .skill-item h4 { font-family: 'Montserrat'; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
-
-        /* CTA Buttons */
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        .btn {
-            padding: 14px 30px; border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
-            transition: var(--transition); display: inline-flex; align-items: center; gap: 8px;
-        }
-        .btn-primary { background: var(--primary); color: white; border: 1px solid var(--primary); }
-        .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
+        .block-main { flex: 1; }
+        .block-card { background: var(--card-bg); padding: 60px; border-radius: 30px; border: 1px solid var(--card-border); }
 
         /* Chat Widget */
-        .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1001; }
+        #chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
         .chat-btn {
             width: 60px; height: 60px; background: var(--primary); border-radius: 50%;
             display: flex; align-items: center; justify-content: center; color: white;
             cursor: pointer; box-shadow: 0 10px 30px var(--primary-glow);
         }
         .chat-window {
-            position: absolute; bottom: 80px; right: 0; width: 320px; height: 450px;
-            background: var(--bg); border: 1px solid var(--card-border); border-radius: 15px;
-            display: none; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            position: absolute; bottom: 80px; right: 0; width: 350px; height: 500px;
+            background: var(--bg); border: 1px solid var(--primary); border-radius: 20px;
+            display: none; flex-direction: column; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
         .chat-header { background: var(--primary); padding: 15px; color: white; display: flex; justify-content: space-between; font-weight: 700; }
-        .chat-content { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; }
-        .chat-msg { padding: 10px 15px; border-radius: 10px; max-width: 85%; }
-        .msg-ai { background: var(--card-bg); align-self: flex-start; border: 1px solid var(--card-border); }
+        .chat-msgs { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+        .msg { padding: 12px 16px; border-radius: 15px; font-size: 0.85rem; max-width: 80%; line-height: 1.4; }
+        .msg-ai { background: var(--card-bg); color: var(--text-main); align-self: flex-start; border: 1px solid var(--card-border); }
         .msg-user { background: var(--primary); color: white; align-self: flex-end; }
-        .chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--card-border); }
-        .chat-input-area input { flex: 1; background: transparent; border: 1px solid var(--card-border); padding: 8px 15px; border-radius: 20px; color: var(--text-main); outline: none; }
+        .chat-input { padding: 15px; display: flex; gap: 10px; border-top: 1px solid var(--card-border); }
+        .chat-input input { flex: 1; background: transparent; border: 1px solid var(--card-border); padding: 10px 15px; border-radius: 30px; color: var(--text-main); outline: none; }
 
-        /* Mobile Fixes */
-        @media (max-width: 768px) {
+        /* Mobile Adjustments */
+        @media (max-width: 1024px) {
+            * { cursor: auto !important; }
+            #cursor, #cursor-follower { display: none; }
+            .hero-inner { flex-direction: column; text-align: center; gap: 40px; }
+            .hero-text { text-align: center; }
+            .hero-text h1 { font-size: 4rem; }
+            .hero-image-box img { width: 280px; height: 350px; }
+            .skills-container { grid-template-columns: repeat(2, 1fr); }
+            .content-block { flex-direction: column; padding: 80px 5%; }
+            .side-title { display: none; }
             .nav-links { display: none; }
-            .hero-inner { text-align: center; }
-            .hero-quote { margin: 0 auto 35px; text-align: left; }
-            .hero-image-container img { width: 280px; height: 380px; }
-            .btn-group { justify-content: center; }
-            .skills-grid { grid-template-columns: 1fr 1fr; }
-            .nav-socials { border: none; padding-right: 0; }
         }
 
-        @media (max-width: 480px) {
-            .skills-grid { grid-template-columns: 1fr; }
-            .hero-image-container img { width: 240px; height: 320px; }
-        }
-
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--card-border); opacity: 0.8; font-size: 0.8rem; }
+        footer { text-align: center; padding: 80px 20px; background: var(--bg); border-top: 1px solid var(--card-border); opacity: 0.7; }
     </style>
 </head>
 <body class="dark-mode">
 
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
     <nav>
-        <a href="#" class="logo">SHEIKH MARQ</a>
-        <div class="nav-actions">
-            <div class="nav-socials">
-                <a href="https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk" target="_blank" aria-label="Brand Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@sheikhmarq?si=W4BrN4MU3T_vmvz-" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#identity">Identity</a>
-                <a href="#matrix">Matrix</a>
-            </div>
-            <button class="mode-toggle" id="themeBtn" onclick="toggleMode()" title="Toggle Theme">
-                <i class="fas fa-adjust"></i>
-            </button>
+        <div class="logo">SHEIKH MARQ</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">Identity</a>
+            <a href="#skills">Skills</a>
+            <a href="#" onclick="toggleMode()"><i class="fas fa-adjust"></i></a>
         </div>
     </nav>
 
     <main>
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="hero-inner">
-                <div class="hero-image-container">
-                    <img src="profile.jpg" alt="Shaik Musharaf Alam" onerror="this.src='https://via.placeholder.com/320x420/0b0712/9d50bb?text=Sheikh+Marq'">
+                <div class="hero-image-box">
+                    <img src="profile.jpg" alt="Shaik Musharaf Alam" onerror="this.src='https://via.placeholder.com/350x450/1a0514/bc6ff1?text=Sheikh+Marq'">
                 </div>
                 <div class="hero-text">
                     <h1>Sheikh Marq</h1>
-                    <div class="hero-tagline">Your Brand. My Marq.</div>
+                    <div class="hero-tagline">YOUR BRAND. MY MARQ.</div>
                     <div class="hero-quote">
-                        High-end branding, VFX mastery, and real-time CGI production. Based in Kuwait, available worldwide.
+                        Crafting visual legacies through high-end branding, <br>
+                        VFX mastery, and real-time CGI production.
                     </div>
-                    <div class="btn-group">
-                        <a href="https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ" target="_blank" class="btn btn-primary">
-                            <i class="fas fa-folder-open"></i> G-Drive Portfolio
-                        </a>
-                        <a href="mailto:sheikh.marq@gmail.com" class="btn btn-outline">Contact Me</a>
+                    <div style="display: flex; gap: 20px;">
+                        <a href="#about" style="background: var(--primary); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.8rem;">DISCOVER IDENTITY</a>
+                        <a href="mailto:sheikh.marq@gmail.com" style="border: 1px solid var(--primary); color: var(--primary); padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.8rem;">CONTACT ME</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="identity-section" id="identity">
-            <div class="identity-card">
-                <h2>Shaik Musharaf Alam</h2>
-                <p><strong>Professional Brand:</strong> Sheikh Marq | <strong>Online Handle:</strong> Musharaf Smart</p>
-                <p>I am a Kuwait-based visual architect specializing in the convergence of Graphic Design and 3D Technology. With experience as a creative faculty member, I focus on the structural "why" behind every design asset.</p>
-                <p>My goal is to provide Kuwait-based agencies and international clients with visual identities that act as lifetime assets.</p>
-                
-                <div class="identity-links">
-                    <a href="https://www.instagram.com/musharaf_smart?igsh=MWFnM290MTMxNm5k" target="_blank" class="link-item" rel="me">
-                        <i class="fab fa-instagram"></i> Personal Instagram
-                    </a>
-                    <a href="https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk" target="_blank" class="link-item" rel="me">
-                        <i class="fab fa-instagram"></i> Brand Instagram
-                    </a>
-                    <a href="https://youtube.com/@sheikhmarq?si=W4BrN4MU3T_vmvz-" target="_blank" class="link-item" rel="me">
-                        <i class="fab fa-youtube"></i> YouTube Channel
-                    </a>
-                    <a href="https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ" target="_blank" class="link-item">
-                        <i class="fas fa-external-link-alt"></i> View Full Portfolio
-                    </a>
+        <!-- IDENTITY BLOCK -->
+        <section class="content-block" id="about">
+            <div class="side-title">IDENTITY</div>
+            <div class="block-main">
+                <div class="block-card">
+                    <h2 style="font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 30px;">Shaik Musharaf Alam</h2>
+                    <p style="margin-bottom: 20px; line-height: 1.8; opacity: 0.8;">
+                        Professionally known as <strong>Sheikh Marq</strong>, and recognized online as <strong>Musharaf Smart</strong>. I am a Kuwait-based visual architect specializing in the convergence of Graphic Design and 3D Technology.
+                    </p>
+                    <p style="line-height: 1.8; opacity: 0.8;">
+                        With a background in creative faculty training, I focus on the "why" behind the design. Every brand I build is engineered to be a lifetime asset, not just a temporary logo.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="matrix-section" id="matrix">
-            <div class="matrix-title">
-                <h2>The Creative Matrix</h2>
-                <p style="color: var(--text-muted);">Unified Design & Production Workflow</p>
+        <!-- SKILLS MATRIX (Inspired by Reference) -->
+        <section id="skills" style="padding: 100px 0;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-family: 'Montserrat'; font-size: 2.5rem;">The Creative Matrix</h2>
+                <p style="opacity: 0.6;">High-performance tools for modern brand dominance.</p>
             </div>
-            <div class="skills-grid">
-                <div class="skill-item">
+            <div class="skills-container">
+                <div class="skill-box">
                     <i class="fas fa-bezier-curve"></i>
                     <h4>Branding</h4>
                 </div>
-                <div class="skill-item">
+                <div class="skill-box">
                     <i class="fas fa-cube"></i>
                     <h4>CGI Production</h4>
                 </div>
-                <div class="skill-item">
+                <div class="skill-box">
                     <i class="fas fa-film"></i>
                     <h4>VFX Compositing</h4>
                 </div>
-                <div class="skill-item">
+                <div class="skill-box">
                     <i class="fas fa-robot"></i>
                     <h4>AI Workflow</h4>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-pen-nib"></i>
+                <div class="skill-box">
+                    <i class="fas fa-pen-fancy"></i>
                     <h4>Typography</h4>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-layer-group"></i>
-                    <h4>Motion Graphics</h4>
-                </div>
-                <div class="skill-item">
+                <div class="skill-box">
                     <i class="fas fa-camera-retro"></i>
                     <h4>Manipulation</h4>
                 </div>
-                <div class="skill-item">
+                <div class="skill-box">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>Motion Graphics</h4>
+                </div>
+                <div class="skill-box">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <h4>Mentorship</h4>
                 </div>
@@ -321,54 +273,64 @@
         </section>
     </main>
 
-    <div class="chat-widget">
+    <!-- CHAT WIDGET -->
+    <div id="chat-widget">
         <div class="chat-btn" onclick="toggleChat()">
             <i class="fas fa-bolt"></i>
         </div>
-        <div class="chat-window" id="chatWin">
+        <div class="chat-window" id="chatWindow">
             <div class="chat-header">
-                <span>Marq AI Studio</span>
+                <span>MARQ STUDIO AI</span>
                 <i class="fas fa-times" style="cursor:pointer" onclick="toggleChat()"></i>
             </div>
-            <div class="chat-content" id="chatMsgs">
-                <div class="chat-msg msg-ai">Welcome. Please tell me your Brand Name and project type to begin.</div>
+            <div class="chat-msgs" id="chatMsgs">
+                <div class="msg msg-ai">Welcome to the Studio. To help Shaik contact you, please share your Brand Name and project type.</div>
             </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatIn" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendChat()">
-                <button onclick="sendChat()" style="background:var(--primary); border:none; color:white; width:30px; height:30px; border-radius:50%; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+            <div class="chat-input">
+                <input type="text" id="chatIn" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendMsg()">
+                <button onclick="sendMsg()" style="background:var(--primary); border:none; color:white; width:40px; height:40px; border-radius:50%; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
     <footer>
-        <div style="margin-bottom: 20px;">
-            <a href="https://www.instagram.com/sheikh.marq_?igsh=MjNnNHZ2N2lxeDBk" target="_blank" style="color:var(--text-main); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.instagram.com/musharaf_smart?igsh=MWFnM290MTMxNm5k" target="_blank" style="color:var(--text-main); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram-square"></i></a>
-            <a href="https://youtube.com/@sheikhmarq?si=W4BrN4MU3T_vmvz-" target="_blank" style="color:var(--text-main); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
+        <div style="margin-bottom: 30px;">
+            <a href="https://www.instagram.com/sheikh.marq_" style="color:var(--text-main); margin: 0 15px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@sheikhmarq" style="color:var(--text-main); margin: 0 15px; font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
         </div>
         <p>&copy; 2025 Shaik Musharaf Alam | Branded as Sheikh Marq</p>
-        <p style="opacity: 0.5; margin-top: 8px;">Identity Unified: Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</p>
+        <p style="font-size: 0.7rem; margin-top: 10px; opacity: 0.5;">Identity Unified: Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</p>
     </footer>
 
     <script>
+        // Theme Toggle Logic
         function toggleMode() {
             document.body.classList.toggle('light-mode');
         }
 
-        let chatStep = 0;
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            follower.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`;
+        });
+
+        // Chatbot Logic
+        let step = 0;
         function toggleChat() {
-            const win = document.getElementById('chatWin');
-            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+            const w = document.getElementById('chatWindow');
+            w.style.display = w.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        function sendChat() {
+        function sendMsg() {
             const input = document.getElementById('chatIn');
             const msgs = document.getElementById('chatMsgs');
             const val = input.value.trim();
             if(!val) return;
 
             const u = document.createElement('div');
-            u.className = 'chat-msg msg-user';
+            u.className = 'msg msg-user';
             u.innerText = val;
             msgs.appendChild(u);
             input.value = '';
@@ -376,17 +338,32 @@
 
             setTimeout(() => {
                 const a = document.createElement('div');
-                a.className = 'chat-msg msg-ai';
-                if(chatStep === 0) {
-                    a.innerText = "Understood. Please provide an Email or WhatsApp number so Shaik can contact you.";
-                    chatStep = 1;
+                a.className = 'msg msg-ai';
+                if(step === 0) {
+                    a.innerText = "Understood. Please provide an Email or WhatsApp number so Shaik can get back to you with a proposal.";
+                    step = 1;
                 } else {
-                    a.innerText = "Thank you. Your inquiry is recorded. Shaik will review this and contact you soon.";
-                    window.location.href = `mailto:sheikh.marq@gmail.com?subject=Inquiry from Portfolio&body=Message: ${val}`;
+                    a.innerText = "Thank you. Your details are recorded. Shaik will review this and contact you shortly. Please check your email for a confirmation soon.";
+                    // Logic to capture and mail
+                    const mailto = `mailto:sheikh.marq@gmail.com?subject=Portfolio Inquiry&body=Message: ${val}`;
+                    setTimeout(() => { window.location.href = mailto; }, 2000);
                 }
                 msgs.appendChild(a);
                 msgs.scrollTop = msgs.scrollHeight;
             }, 800);
         }
 
-        const obs = new IntersectionObserver((ent
+        // Smooth Section Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) e.target.style.opacity = 1;
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.block-card, .skill-box').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transition = 'opacity 1s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
