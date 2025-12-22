@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://sheikh-marq.github.io/sitemap.xml
+Link to the sitemap to help Google find all content
+Sitemap: https://www.google.com/search?q=https://sheikhmarq.com/sitemap.xml
