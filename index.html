@@ -6,10 +6,18 @@
     
     <!-- ADVANCED SEO: IDENTITY SEARCH ENGINE OPTIMIZATION -->
     <title>Sheikh Marq | Shaik Musharaf Alam | Graphic Designer Kuwait</title>
-    <meta name="description" content="Portfolio of Shaik Musharaf Alam (Sheikh Marq / Musharaf Smart). Premier Graphic Designer in Kuwait. Specialist in Branding, CGI, and VFX.">
-    <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, Graphic Designer Kuwait, Branding Specialist, VFX Artist Kuwait, Unreal Engine CGI">
+    <meta name="description" content="Official portfolio of Shaik Musharaf Alam (Sheikh Marq). Premier Graphic Designer in Kuwait specializing in Branding, CGI (Unreal Engine), and VFX.">
+    <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, Graphic Designer Kuwait, Branding Specialist Kuwait, VFX Artist, CGI Portfolio">
     <meta name="author" content="Shaik Musharaf Alam">
-    
+    <link rel="canonical" href="https://sheikhmarq.com/">
+
+    <!-- OPEN GRAPH / SOCIAL PREVIEW -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sheikhmarq.com/">
+    <meta property="og:title" content="Sheikh Marq | Visual Architect & Designer">
+    <meta property="og:description" content="High-end branding and CGI production by Shaik Musharaf Alam.">
+    <meta property="og:image" content="https://sheikhmarq.com/profile.jpg">
+
     <!-- JSON-LD FOR IDENTITY UNIFICATION -->
     <script type="application/ld+json">
     {
@@ -25,8 +33,10 @@
       "url": "https://sheikhmarq.com",
       "sameAs": [
         "https://www.instagram.com/sheikh.marq_",
-        "https://youtube.com/@sheikhmarq"
-      ]
+        "https://youtube.com/@sheikhmarq",
+        "https://www.instagram.com/musharaf_smart"
+      ],
+      "knowsAbout": ["Graphic Design", "CGI", "VFX", "Branding", "Unreal Engine"]
     }
     </script>
 
@@ -37,13 +47,10 @@
 
     <style>
         :root {
-            /* Metallic Purple & Platinum Theme */
             --primary: #9d50bb;
             --primary-glow: rgba(157, 80, 187, 0.4);
             --platinum: #e5e7eb;
             --deep-space: #0b0712;
-            
-            /* Theme Variables - Dark Default */
             --bg: var(--deep-space);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
@@ -53,7 +60,6 @@
             --transition: all 0.3s ease;
         }
 
-        /* Light Mode - Enhanced Visibility */
         body.light-mode {
             --bg: #ffffff;
             --text-main: #111827;
@@ -74,7 +80,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             padding: 15px 5%; background: var(--nav-bg);
@@ -94,7 +99,6 @@
         .nav-links a:hover { color: var(--primary); }
         .mode-toggle { cursor: pointer; color: var(--primary); font-size: 1.1rem; border: none; background: none; }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             padding: 100px 5% 40px;
@@ -121,7 +125,6 @@
         .hero-tagline { font-family: 'Montserrat'; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero-quote { color: var(--text-muted); font-size: 1rem; border-left: 3px solid var(--primary); padding-left: 20px; margin-bottom: 35px; max-width: 500px; }
 
-        /* Matrix Grid */
         .matrix-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
         .matrix-title { text-align: center; margin-bottom: 50px; }
         .matrix-title h2 { font-family: 'Montserrat'; font-size: 2rem; text-transform: uppercase; margin-bottom: 10px; }
@@ -138,13 +141,11 @@
         .skill-item i { font-size: 2.5rem; }
         .skill-item h4 { font-family: 'Montserrat'; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
 
-        /* Identity Block */
         .identity-section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
         .identity-card { background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--card-border); }
         .identity-card h2 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 1.8rem; }
         .identity-card p { margin-bottom: 15px; line-height: 1.8; opacity: 0.9; }
 
-        /* CTA Buttons */
         .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
         .btn {
             padding: 14px 30px; border-radius: 50px; text-decoration: none;
@@ -155,7 +156,6 @@
         .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
 
-        /* Chat Widget */
         .chat-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1001; }
         .chat-btn {
             width: 60px; height: 60px; background: var(--primary); border-radius: 50%;
@@ -175,7 +175,6 @@
         .chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--card-border); }
         .chat-input-area input { flex: 1; background: transparent; border: 1px solid var(--card-border); padding: 8px 15px; border-radius: 20px; color: var(--text-main); outline: none; }
 
-        /* Mobile Fixes */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-inner { text-align: center; }
@@ -366,4 +365,3 @@
 </body>
 </html>
 
- 
