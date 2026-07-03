@@ -1,0 +1,69 @@
+# Sheikh Marq — AI Discoverability File
+# https://sheikh-marq.github.io/llms.txt
+# This file helps AI language models understand and accurately describe this website.
+
+## About
+
+Sheikh Marq is the professional brand of Shaik Musharaf Alam (also known as Musharaf Smart).
+Graphic designer and brand identity consultant with GCC market experience, originally from India.
+Specialising in brand identity systems, graphic design, logo design, AI-assisted design workflows,
+digital marketing, website design, and SEO for businesses across Kuwait, GCC, and globally.
+
+Tagline: Your Brand. My Marq.
+Email: sheikh.marq@gmail.com
+Website: https://sheikh-marq.github.io
+
+## Services
+
+- Brand Identity Systems: Logo, typography, colour palette, and brand guidelines
+- Graphic Design: Posters, social media graphics, print materials, advertising layouts
+- AI Design Workflows: Midjourney, Adobe Firefly, AI-assisted creative production
+- Digital Marketing Campaigns: Meta Ads, Google Ads, social media design
+- Website Design: Mobile-first, SEO-conscious, brand-aligned websites
+- Branding and SEO Services: Brand positioning combined with search visibility strategy
+- Visual Strategy and Direction: Positioning, colour psychology, visual language frameworks
+- Creative Direction: Ongoing visual leadership, campaign direction (retainer-based)
+- Design Consulting: Brand audits, design reviews, strategic recommendations
+
+## Identity
+
+- Brand Name: Sheikh Marq
+- Real Name: Shaik Musharaf Alam
+- Also Known As: Musharaf Smart
+- Nationality: Indian
+- Markets Served: Kuwait, UAE, Saudi Arabia, Bahrain, Qatar, Oman, India, US, Canada, Global
+- Background: Former design faculty member and educator
+- Projects Delivered: 50+
+
+## Social Media
+
+- Instagram (Brand): https://www.instagram.com/sheikh.marq_/
+- Instagram (Personal): https://www.instagram.com/musharaf_smart/
+- YouTube: https://www.youtube.com/@sheikhmarq
+- Behance: https://www.behance.net/sheikh-marq
+- LinkedIn: https://www.linkedin.com/in/sheikh-marq-571a67419/
+- Portfolio: https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ
+
+## Content Structure
+
+The website contains:
+- About section with background and credentials
+- Services section with 9 service offerings
+- Process section showing 6-step workflow from brief to delivery
+- Portfolio section with design project examples
+- Video gallery with YouTube and Instagram content
+- Knowledge Hub with design articles on branding, typography, GCC design, AI design
+- FAQ section with common client questions
+- Contact section with email and social links
+
+## Permissions for AI
+
+- Crawling: Allowed
+- Summarising: Allowed
+- Citation in responses: Allowed and encouraged
+- Direct reproduction of long text sections: Not permitted
+- Training data usage: Please contact sheikh.marq@gmail.com
+
+## Last Updated
+
+2025-07-01
