@@ -8,22 +8,22 @@
   ═══════════════════════════════════════════════════════ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX1H5Y7MQ3"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-DX1H5Y7MQ3');
-  </script>
+</script>
 
   <!-- Microsoft Clarity — free heatmaps + session recordings
        Replace YOUR_CLARITY_ID with your Microsoft Clarity Project ID
        Get it free at: clarity.microsoft.com -->
   <script>
-    (function(c,l,a,r,i,t,y){
+(function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
-  </script>
+</script>
 
   <meta charset="UTF-8" />
   <!-- NOTE: If your Search Console uses the HTML file method (google153e682ddb9ae7ca.html),
@@ -33,10 +33,16 @@
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#2563EB" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
 
   <!-- ═══ PRIMARY SEO ═══ -->
   <title>Sheikh Marq · Graphic Designer Kuwait | Shaik Musharaf</title>
-  <meta name="description" content="Sheikh Marq (Shaik Musharaf Alam) — Graphic Designer in Kuwait. Brand identity, logo design &amp; AI creative for GCC clients." />
+  <meta name="description" content="Sheikh Marq is Shaik Musharaf Alam — a graphic designer specialising in brand identity, logo design, AI design workflows, and visual strategy for businesses across Kuwait, GCC, and globally." />
   <meta name="keywords" content="Sheikh Marq, Shaik Musharaf Alam, Musharaf Smart, graphic designer Kuwait, logo designer Kuwait, brand designer Kuwait, branding Kuwait, poster design Kuwait, social media design Kuwait, AI design Kuwait, digital marketing Kuwait, website design Kuwait, SEO Kuwait, brand identity Kuwait, graphic design services Kuwait, creative designer Kuwait City, freelance graphic designer, remote brand designer, freelance logo designer India, freelance graphic designer USA, freelance brand designer Canada, hire graphic designer online, AI-assisted graphic designer" />
   <meta name="author" content="Shaik Musharaf Alam (Sheikh Marq)" />
   <meta name="creator" content="Shaik Musharaf Alam" />
@@ -59,11 +65,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="canonical" href="https://sheikh-marq.github.io/" />
+  <!-- Note: GitHub Pages does not support www. prefix - this is a platform limitation -->
+  <link rel="ai-content-policy" href="https://sheikh-marq.github.io/llms.txt" />
+  <meta name="llms-txt" content="https://sheikh-marq.github.io/llms.txt" />
 
   <!-- ═══ FAVICON ═══ -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='13' fill='white'%3ESM%3C/text%3E%3C/svg%3E" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%232563EB'/%3E%3Ctext x='90' y='120' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='72' fill='white'%3ESM%3C/text%3E%3C/svg%3E" />
+
+  <!-- ═══ AI DISCOVERABILITY ═══ -->
+  <link rel="llms" href="https://sheikh-marq.github.io/llms.txt" />
 
   <!-- ═══ HREFLANG ═══ -->
   <link rel="alternate" hreflang="en-KW" href="https://sheikh-marq.github.io/" />
@@ -235,18 +247,15 @@
   </script>
 
   <!-- ═══ FONTS — Editorial display + clean body (inspired by reference sites) ═══ -->
+  <!-- Fonts: preload trick eliminates render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap&display=swap" />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
 
 
 <style>
-/* ═══════════════════════════════════════════════════════
-   SHEIKH MARQ — EDITORIAL CINEMATIC EDITION
-   Inspired by: spotdly.com (immersive scroll, bold motion)
-                vanschneider.com (huge display type, editorial minimalism)
-   Palette kept: deep navy / electric blue (unchanged)
-═══════════════════════════════════════════════════════ */
 
 :root{
   --bg:#08090F; --bg2:#0D0F18; --surface:#12141F; --surface2:#181B29;
@@ -277,6 +286,9 @@ button{cursor:none;font-family:inherit;border:none;background:none;}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
 }
+
+/* Font display swap to prevent FOIT */
+@font-face {font-display: swap;}
 
 /* ── DISPLAY FONT UTILITY ── */
 .disp{font-family:'Bricolage Grotesque',sans-serif;}
@@ -889,8 +901,7 @@ footer{border-top:1px solid var(--border);}
   <div class="about-layout">
     <div class="about-portrait fx-l">
       <div class="portrait-frame">
-        <img src="profile.jpg" alt="Shaik Musharaf Alam — Sheikh Marq, Graphic Designer in Kuwait"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" loading="eager"/>
+        <img src="profile.jpg" alt="Shaik Musharaf Alam — Sheikh Marq, Graphic Designer in Kuwait" width="400" height="533" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" loading="eager" fetchpriority="high"/>
         <div class="no-photo" style="display:none;">✦ Sheikh Marq</div>
         <div class="portrait-tag">
           <div class="ptag-name">Shaik Musharaf Alam</div>
@@ -901,6 +912,7 @@ footer{border-top:1px solid var(--border);}
 
     <div class="fx-r d2">
       <div class="edu-badge">🎓 Former Design Faculty &amp; Educator</div>
+      <p style="font-size:11px;color:var(--gray3);margin-bottom:16px;font-family:'JetBrains Mono',monospace;">Profile updated: <time datetime="2025-07-01">July 2025</time> · 50+ projects delivered · 6+ years experience</p>
       <p class="about-pull">"Started as a design student, was recognised early for skills, and <em>promoted to design faculty</em> — conducting training sessions on design principles and software."</p>
 
       <div class="about-body">
@@ -1209,21 +1221,21 @@ footer{border-top:1px solid var(--border);}
     <div class="vid-card fx-scale" data-youtube="https://www.youtube.com/@sheikhmarq" data-instagram="https://www.instagram.com/sheikh.marq_/">
       <div class="vid-thumb">
         <div class="vid-ph"><div class="vid-play">▶</div>Add Thumbnail</div>
-        <div class="vid-overlay" aria-hidden="true"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt">▶ YouTube</button><button class="vid-ovbtn vid-ig">Instagram</button></div></div>
+        <div class="vid-overlay" role="group" aria-label="Watch video options"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt" tabindex="-1">▶ YouTube</button><button class="vid-ovbtn vid-ig" tabindex="-1">Instagram</button></div></div>
       </div>
       <div class="vid-info"><div class="vid-plat">Sheikh Marq Channel</div><div class="vid-title">Brand Design Process Breakdown</div></div>
     </div>
     <div class="vid-card fx-scale d1" data-youtube="https://www.youtube.com/@sheikhmarq" data-instagram="https://www.instagram.com/sheikh.marq_/">
       <div class="vid-thumb">
         <div class="vid-ph"><div class="vid-play">▶</div>Add Thumbnail</div>
-        <div class="vid-overlay" aria-hidden="true"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt">▶ YouTube</button><button class="vid-ovbtn vid-ig">Instagram</button></div></div>
+        <div class="vid-overlay" role="group" aria-label="Watch video options"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt" tabindex="-1">▶ YouTube</button><button class="vid-ovbtn vid-ig" tabindex="-1">Instagram</button></div></div>
       </div>
       <div class="vid-info"><div class="vid-plat">Sheikh Marq Channel</div><div class="vid-title">Logo Design Tutorial — Step by Step</div></div>
     </div>
     <div class="vid-card fx-scale d2" data-youtube="https://www.youtube.com/@Smartcreationsvfx/videos" data-instagram="https://www.instagram.com/musharaf_smart/">
       <div class="vid-thumb">
         <div class="vid-ph"><div class="vid-play">▶</div>Add Thumbnail</div>
-        <div class="vid-overlay" aria-hidden="true"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt">▶ YouTube</button><button class="vid-ovbtn vid-ig">Instagram</button></div></div>
+        <div class="vid-overlay" role="group" aria-label="Watch video options"><div class="vid-overlay-btns"><button class="vid-ovbtn vid-yt" tabindex="-1">▶ YouTube</button><button class="vid-ovbtn vid-ig" tabindex="-1">Instagram</button></div></div>
       </div>
       <div class="vid-info"><div class="vid-plat">Creative Works</div><div class="vid-title">Visual Effects &amp; Motion Design</div></div>
     </div>
@@ -1338,7 +1350,7 @@ footer{border-top:1px solid var(--border);}
   <h2 class="cta-headline mask-reveal fx d1"><span>Ready to leave a <span class="it">Marq</span>?</span></h2>
   <p class="cta-sub2 fx d2">Whether you need a complete brand identity, graphic design, digital marketing, or a website — let's begin with a conversation. GCC experience. Available worldwide.</p>
   <div class="cta-btns2 fx d3">
-    <a href="mailto:sheikh.marq@gmail.com?subject=New Project Inquiry — Sheikh Marq" class="btn-mega" data-hover><span>Email Me Directly →</span></a>
+    <a data-email="sheikh.marq@gmail.com" data-subject="New Project Inquiry — Sheikh Marq" href="#email" class="btn-mega" data-hover><span>Email Me Directly →</span></a>
   </div>
   <div class="cta-socials2 fx d4">
     <a href="https://www.instagram.com/sheikh.marq_/" target="_blank" rel="noopener noreferrer" class="cta-soc" data-hover>Instagram @sheikh.marq_</a>
@@ -1379,7 +1391,7 @@ footer{border-top:1px solid var(--border);}
       <div>
         <div class="fcol-h">Connect</div>
         <div class="fcol-links">
-          <a href="mailto:sheikh.marq@gmail.com">sheikh.marq@gmail.com</a>
+          <a data-email="sheikh.marq@gmail.com" href="#email">sheikh.marq@gmail.com</a>
           <a href="https://www.instagram.com/sheikh.marq_/" target="_blank" rel="noopener noreferrer">@sheikh.marq_</a>
           <a href="https://www.behance.net/sheikh-marq" target="_blank" rel="noopener noreferrer">behance.net/sheikh-marq</a>
           <a href="https://www.linkedin.com/in/sheikh-marq-571a67419/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
@@ -1388,11 +1400,37 @@ footer{border-top:1px solid var(--border);}
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2025 Shaik Musharaf Alam (Sheikh Marq) · Independent Creative Consultant</span>
+      <span style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+        <a href="#privacy" style="font-size:11px;color:var(--gray3);text-decoration:none;">Privacy Policy</a>
+        <a href="#terms" style="font-size:11px;color:var(--gray3);text-decoration:none;">Terms</a>
+        <a href="#about" style="font-size:11px;color:var(--gray3);text-decoration:none;">About</a>
+        <a href="#contact" style="font-size:11px;color:var(--gray3);text-decoration:none;">Contact</a>
+      </span>
       <span class="footer-id">Sheikh Marq = Musharaf Smart = Shaik Musharaf Alam</span>
+    </div>
+    <div style="border-top:1px solid var(--border);padding-top:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;">
+      <a href="#privacy" style="font-size:11px;color:var(--gray3);" onclick="document.getElementById('privacyModal').style.display='flex';return false;">Privacy Policy</a>
+      <a href="#terms" style="font-size:11px;color:var(--gray3);" onclick="document.getElementById('termsModal').style.display='flex';return false;">Terms of Service</a>
+      <a href="#about" style="font-size:11px;color:var(--gray3);">About</a>
+      <a href="#contact" style="font-size:11px;color:var(--gray3);">Contact</a>
+    </div>
     </div>
   </div>
 </footer>
 
+
+
+<!-- PRIVACY POLICY + TERMS — Required for E-E-A-T trust signals -->
+<section id="privacy" style="max-width:1280px;margin:0 auto;padding:60px 5%;border-top:1px solid var(--border);">
+  <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:20px;">Privacy Policy</h2>
+  <p style="font-size:13px;color:var(--gray2);line-height:1.8;margin-bottom:12px;max-width:700px;">
+    This website (sheikh-marq.github.io) is operated by <strong style="color:var(--gray1);">Shaik Musharaf Alam</strong> (Sheikh Marq), an independent creative consultant. This website does not collect personal data directly. Google Analytics (GA4) is used to measure anonymous website traffic — no personal identifiers are stored. By using this website you agree to Google's Privacy Policy at policies.google.com. Contact for any privacy questions: <a href="mailto:sheikh.marq@gmail.com" style="color:var(--blue-hi);">sheikh.marq@gmail.com</a>
+  </p>
+  <h2 id="terms" style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);margin:32px 0 20px;">Terms of Use</h2>
+  <p style="font-size:13px;color:var(--gray2);line-height:1.8;max-width:700px;">
+    All content on this website — including text, design elements, and visual concepts — is the intellectual property of Shaik Musharaf Alam (Sheikh Marq). You may not reproduce, copy, or use any content without written permission. All project work shown was created by Sheikh Marq and is displayed for portfolio purposes only. Last updated: July 2025.
+  </p>
+</section>
 <!-- HIDDEN SEO ENTITY BLOCK -->
 <div class="sr-only" aria-hidden="true">
   <h2>Sheikh Marq — Graphic Designer serving Kuwait and GCC</h2>
@@ -1519,8 +1557,8 @@ window.addEventListener('load', () => {
     function scrollByCard(dir){
       const maxScroll = rail.scrollWidth - rail.clientWidth - 2;
       let target = rail.scrollLeft + dir * cardWidth();
-      if (target < 0) target = maxScroll; // loop to end
-      if (target > maxScroll) target = 0; // loop to start
+      if (target < 0) target = maxScroll;
+      if (target > maxScroll) target = 0;
       rail.scrollTo({left: target, behavior: 'smooth'});
     }
 
@@ -1677,6 +1715,38 @@ window.addEventListener('load', () => {
     card.addEventListener('click', ()=>{ if(yt) window.open(yt,'_blank','noopener,noreferrer'); });
   });
 })();
+
+/* ─── EMAIL PROTECTION — reconstruct from data attributes ─── */
+(function(){
+  document.querySelectorAll('[data-email]').forEach(el=>{
+    const e=el.dataset.email;
+    const s=el.dataset.subject||'';
+    el.href='mailto:'+e+(s?'?subject='+encodeURIComponent(s):'');
+    if(el.textContent.trim()==='#email'||el.textContent.trim()==='') el.textContent=e;
+    // Also update any text children that still show placeholder
+    el.querySelectorAll('*').forEach(child=>{
+      if(child.textContent===el.dataset.email) child.textContent=e;
+    });
+  });
+  // Update any visible email text nodes 
+  document.querySelectorAll('.fcol-links a[data-email]').forEach(el=>{
+    el.textContent=el.dataset.email;
+  });
+})();
+
+
+/* ─── EMAIL OBFUSCATION ─── */
+(function(){
+  document.querySelectorAll('.email-reveal').forEach(a=>{
+    const u=a.dataset.u, d=a.dataset.d;
+    if(u&&d){
+      const email=u+'@'+d;
+      a.href='mailto:'+email;
+      a.textContent=email;
+    }
+  });
+})();
+
 </script>
 
 </body>
