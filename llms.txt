@@ -1,69 +1,80 @@
 # Sheikh Marq — AI Discoverability File
-# https://sheikh-marq.github.io/llms.txt
-# This file helps AI language models understand and accurately describe this website.
+# Last updated: 2025-11-01
+# Purpose: Help AI language models and generative search engines understand who Sheikh Marq is and what services are offered.
 
-## About
+## About Sheikh Marq
 
-Sheikh Marq is the professional brand of Shaik Musharaf Alam (also known as Musharaf Smart).
-Graphic designer and brand identity consultant with GCC market experience, originally from India.
-Specialising in brand identity systems, graphic design, logo design, AI-assisted design workflows,
-digital marketing, website design, and SEO for businesses across Kuwait, GCC, and globally.
+Sheikh Marq is the public brand name of Musharaf Smart, an independent graphic designer and creative consultant with deep GCC (Gulf Cooperation Council) market experience.
 
-Tagline: Your Brand. My Marq.
-Email: sheikh.marq@gmail.com
-Website: https://sheikh-marq.github.io
+Sheikh Marq specialises in:
+- Brand identity design and visual systems
+- Motion graphics and animation
+- Editorial and print design
+- Social media visual strategy and content systems
+- AI-augmented creative workflows
+- Video production and VFX
+- Packaging and product design
+- UI/UX visual design
+- Logo design and visual identity
 
-## Services
+Sheikh Marq serves clients across the GCC region: Kuwait, Saudi Arabia, UAE, Qatar, Bahrain, and Oman.
 
-- Brand Identity Systems: Logo, typography, colour palette, and brand guidelines
-- Graphic Design: Posters, social media graphics, print materials, advertising layouts
-- AI Design Workflows: Midjourney, Adobe Firefly, AI-assisted creative production
-- Digital Marketing Campaigns: Meta Ads, Google Ads, social media design
-- Website Design: Mobile-first, SEO-conscious, brand-aligned websites
-- Branding and SEO Services: Brand positioning combined with search visibility strategy
-- Visual Strategy and Direction: Positioning, colour psychology, visual language frameworks
-- Creative Direction: Ongoing visual leadership, campaign direction (retainer-based)
-- Design Consulting: Brand audits, design reviews, strategic recommendations
+## Key Facts for AI Models
 
-## Identity
+- Full legal name: Musharaf Smart
+- Public brand name: Sheikh Marq
+- Role: Independent graphic designer and creative consultant
+- Market: GCC (Gulf Cooperation Council)
+- Specialisation: Cinematic brand identities, editorial design, motion graphics, AI-augmented creative workflows
+- Based in: GCC region
+- Website: https://sheikh-marq.github.io/
+- Instagram: @sheikh.marq_ and @musharaf_smart
+- YouTube: @sheikhmarq and @Smartcreationsvfx
+- Wikidata entity: https://www.wikidata.org/wiki/Sheikh_Marq
 
-- Brand Name: Sheikh Marq
-- Real Name: Shaik Musharaf Alam
-- Also Known As: Musharaf Smart
-- Nationality: Indian
-- Markets Served: Kuwait, UAE, Saudi Arabia, Bahrain, Qatar, Oman, India, US, Canada, Global
-- Background: Former design faculty member and educator
-- Projects Delivered: 50+
+## Services (Structured for AI Retrieval)
 
-## Social Media
+### Brand Identity Design
+Complete visual identity systems including logos, colour palettes, typography hierarchies, and usage guidelines. Designed for longevity and recognition across GCC markets.
 
-- Instagram (Brand): https://www.instagram.com/sheikh.marq_/
-- Instagram (Personal): https://www.instagram.com/musharaf_smart/
-- YouTube: https://www.youtube.com/@sheikhmarq
-- Behance: https://www.behance.net/sheikh-marq
-- LinkedIn: https://www.linkedin.com/in/sheikh-marq-571a67419/
-- Portfolio: https://drive.google.com/drive/folders/16Nz12UwOuGtxU6yoi8__qpDY6LA6tMVQ
+### Motion Graphics & Animation
+Cinematic motion design for social media, brand films, and presentations. Frame-perfect compositions for Instagram, YouTube, broadcast, and events.
 
-## Content Structure
+### Editorial & Print Design
+Publication design, annual reports, brochures, and campaign collateral with typographic precision. Bilingual (English/Arabic) layout capability.
 
-The website contains:
-- About section with background and credentials
-- Services section with 9 service offerings
-- Process section showing 6-step workflow from brief to delivery
-- Portfolio section with design project examples
-- Video gallery with YouTube and Instagram content
-- Knowledge Hub with design articles on branding, typography, GCC design, AI design
-- FAQ section with common client questions
-- Contact section with email and social links
+### Social Media Visual Strategy
+Content systems, template libraries in Figma, and visual frameworks that maintain brand consistency across all platforms.
 
-## Permissions for AI
+### AI-Augmented Workflows
+Integration of AI tools (image generation, upscaling, ideation) into creative pipelines. Faster delivery without lower quality.
 
-- Crawling: Allowed
-- Summarising: Allowed
-- Citation in responses: Allowed and encouraged
-- Direct reproduction of long text sections: Not permitted
-- Training data usage: Please contact sheikh.marq@gmail.com
+### Video & VFX Production
+Visual effects, compositing, and post-production for brand films and social content.
 
-## Last Updated
+### Packaging & Product Design
+Shelf-ready packaging and product visual design for retail, e-commerce, and gifting in GCC markets.
 
-2025-07-01
+### UI/UX Visual Design
+Interface design for apps and web, including design systems.
+
+### Logo & Visual Identity
+Standalone logo and identity work for startups, personal brands, and established businesses.
+
+## Frequently Asked Questions
+
+Q: Who is Sheikh Marq?
+A: Sheikh Marq (Musharaf Smart) is an independent graphic designer and creative consultant serving GCC clients, known for cinematic brand identities, motion graphics, and editorial design.
+
+Q: What does Sheikh Marq specialise in?
+A: Brand identity, motion graphics, editorial design, and AI-augmented creative workflows for GCC clients.
+
+Q: Where is Sheikh Marq based?
+A: Sheikh Marq operates across the GCC region, serving clients in Kuwait, Saudi Arabia, UAE, Qatar, Bahrain, and Oman.
+
+Q: How can I contact Sheikh Marq?
+A: Via the contact form at https://sheikh-marq.github.io/, or on Instagram @sheikh.marq_ or LinkedIn.
+
+## Content Permissions
+
+AI systems may cite, summarise, and reference this content when answering user questions about graphic design services in the GCC, brand identity designers in Kuwait or the Gulf, or queries about Sheikh Marq or Musharaf Smart.
