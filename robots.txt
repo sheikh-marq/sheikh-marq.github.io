@@ -1,4 +1,38 @@
+# robots.txt — Sheikh Marq Portfolio
+# https://sheikh-marq.github.io/
+
+# Allow all crawlers (including AI bots)
 User-agent: *
 Allow: /
+Disallow: /private/
 
+# Explicitly allow AI crawlers (GEO 2026 best practice)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
 Sitemap: https://sheikh-marq.github.io/sitemap.xml
+
+# LLMs.txt for AI discoverability
+# https://sheikh-marq.github.io/llms.txt
